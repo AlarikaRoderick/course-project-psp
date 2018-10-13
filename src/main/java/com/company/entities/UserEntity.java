@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user", schema = "cinema", catalog = "")
+@Table(name = "user", schema = "cinema")
 public class UserEntity {
     private int idUser;
     private String userName;
@@ -15,6 +15,23 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderEntity> orderEntities;
+
+    public void addOrder(OrderEntity order){
+        order.setUser(this);
+        orderEntities.add(order);
+    }
+
+    public void removeOrder(OrderEntity order){
+        orderEntities.remove(order);
+    }
+
+    public List<OrderEntity> getOrderEntities() {
+        return orderEntities;
+    }
+
+    public void setOrderEntities(List<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
+    }
 
     @Id
     @Column(name = "id_user", nullable = false)

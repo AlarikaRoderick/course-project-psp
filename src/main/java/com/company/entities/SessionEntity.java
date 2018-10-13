@@ -23,7 +23,40 @@ public class SessionEntity {
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TicketEntity> ticketEntities;
 
+    public void addTicket(TicketEntity ticket){
+        ticket.setSession(this);
+        ticketEntities.add(ticket);
+    }
+
+    public void removeTicket(TicketEntity ticket){
+        ticketEntities.remove(ticket);
+    }
+
+    public List<TicketEntity> getTicketEntities() {
+        return ticketEntities;
+    }
+
+    public void setTicketEntities(List<TicketEntity> ticketEntities) {
+        this.ticketEntities = ticketEntities;
+    }
+
     public SessionEntity(){}
+
+    public HallEntity getHall() {
+        return hall;
+    }
+
+    public void setHall(HallEntity hall) {
+        this.hall = hall;
+    }
+
+    public FilmEntity getFilm() {
+        return film;
+    }
+
+    public void setFilm(FilmEntity film) {
+        this.film = film;
+    }
 
     @Id
     @Column(name = "id_session", nullable = false)

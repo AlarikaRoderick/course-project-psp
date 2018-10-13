@@ -30,6 +30,5 @@ public class FirstPageController {
     @FXML
     void initialize() {
 
-
     }
 }

@@ -16,8 +16,33 @@ public class OrderEntity {
     @JoinColumn(name = "id_user")
     private UserEntity user;
 
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<TicketEntity> ticketEntities;
+    private List<TicketEntity> ticketEntities;
+
+    public void addTicket(TicketEntity ticket){
+        ticket.setOrder(this);
+        ticketEntities.add(ticket);
+    }
+
+    public void removeTicket(TicketEntity ticket){
+        ticketEntities.remove(ticket);
+    }
+
+    public List<TicketEntity> getTicketEntities() {
+        return ticketEntities;
+    }
+
+    public void setTicketEntities(List<TicketEntity> ticketEntities) {
+        this.ticketEntities = ticketEntities;
+    }
 
     @Id
     @Column(name = "id_order", nullable = false)

@@ -21,6 +21,23 @@ public class FilmEntity {
     @OneToMany(mappedBy = "film", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SessionEntity> sessionEntities;
 
+    public void addSession(SessionEntity session){
+        session.setFilm(this);
+        sessionEntities.add(session);
+    }
+
+    public void removeSession(SessionEntity session){
+        sessionEntities.remove(session);
+    }
+
+    public List<SessionEntity> getSessionEntities() {
+        return sessionEntities;
+    }
+
+    public void setSessionEntities(List<SessionEntity> sessionEntities) {
+        this.sessionEntities = sessionEntities;
+    }
+
     @Id
     @Column(name = "id_film", nullable = false)
     public int getIdFilm() {

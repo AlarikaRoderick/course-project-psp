@@ -30,6 +30,23 @@ public class HallEntity {
 
     public void setCinema(CinemaEntity cinema){ this.cinema = cinema; }
 
+    public void addSession(SessionEntity session){
+        session.setHall(this);
+        sessionEntityList.add(session);
+    }
+
+    public void removeSession(SessionEntity session){
+        sessionEntityList.remove(session);
+    }
+
+    public List<SessionEntity> getSessionEntityList() {
+        return sessionEntityList;
+    }
+
+    public void setSessionEntityList(List<SessionEntity> sessionEntityList) {
+        this.sessionEntityList = sessionEntityList;
+    }
+
     @Id
     @Column(name = "id_hall", nullable = false)
     public int getIdHall() {

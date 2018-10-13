@@ -16,6 +16,22 @@ public class TicketEntity {
     @JoinColumn(name = "id_order")
     private OrderEntity order;
 
+    public SessionEntity getSession() {
+        return session;
+    }
+
+    public void setSession(SessionEntity session) {
+        this.session = session;
+    }
+
+    public OrderEntity getOrder() {
+        return order;
+    }
+
+    public void setOrder(OrderEntity order) {
+        this.order = order;
+    }
+
     @Id
     @Column(name = "id_ticket", nullable = false)
     public int getIdTicket() {

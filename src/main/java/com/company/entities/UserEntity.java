@@ -4,13 +4,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user", schema = "cinema")
+@Table(name = "user")
 public class UserEntity {
-    private int idUser;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_user;
+
+    @Column(name = "user_name")
     private String userName;
+    @Column(name = "user_surname")
     private String userSurname;
+    @Column(name = "user_age")
     private int userAge;
+    @Column(name = "user_login")
     private String userLogin;
+    @Column(name = "user_password")
     private String userPassword;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -33,18 +41,14 @@ public class UserEntity {
         this.orderEntities = orderEntities;
     }
 
-    @Id
-    @Column(name = "id_user", nullable = false)
-    public int getIdUser() {
-        return idUser;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
-    @Basic
-    @Column(name = "user_name", nullable = false, length = 45)
     public String getUserName() {
         return userName;
     }
@@ -53,8 +57,6 @@ public class UserEntity {
         this.userName = userName;
     }
 
-    @Basic
-    @Column(name = "user_surname", nullable = false, length = 45)
     public String getUserSurname() {
         return userSurname;
     }
@@ -63,8 +65,6 @@ public class UserEntity {
         this.userSurname = userSurname;
     }
 
-    @Basic
-    @Column(name = "user_age", nullable = false)
     public int getUserAge() {
         return userAge;
     }
@@ -73,8 +73,6 @@ public class UserEntity {
         this.userAge = userAge;
     }
 
-    @Basic
-    @Column(name = "user_login", nullable = false, length = 45)
     public String getUserLogin() {
         return userLogin;
     }
@@ -83,8 +81,6 @@ public class UserEntity {
         this.userLogin = userLogin;
     }
 
-    @Basic
-    @Column(name = "user_password", nullable = false, length = 45)
     public String getUserPassword() {
         return userPassword;
     }
@@ -100,7 +96,7 @@ public class UserEntity {
 
         UserEntity that = (UserEntity) o;
 
-        if (idUser != that.idUser) return false;
+        if (id_user != that.id_user) return false;
         if (userAge != that.userAge) return false;
         if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
         if (userSurname != null ? !userSurname.equals(that.userSurname) : that.userSurname != null) return false;
@@ -112,7 +108,7 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        int result = idUser;
+        int result = id_user;
         result = 31 * result + (userName != null ? userName.hashCode() : 0);
         result = 31 * result + (userSurname != null ? userSurname.hashCode() : 0);
         result = 31 * result + userAge;

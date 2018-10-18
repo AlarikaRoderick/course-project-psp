@@ -4,11 +4,20 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "hall", schema = "cinema")
+@Table(name = "hall")
 public class HallEntity {
-    private int idHall;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_hall;
+
+    @Column(name = "hall_name")
     private String hallName;
+
+    @Column(name = "hall_rows")
     private int hallRows;
+
+    @Column(name = "hall_places")
     private int hallPlaces;
 
     @OneToMany(mappedBy = "hall", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -47,18 +56,14 @@ public class HallEntity {
         this.sessionEntityList = sessionEntityList;
     }
 
-    @Id
-    @Column(name = "id_hall", nullable = false)
-    public int getIdHall() {
-        return idHall;
+    public int getId_hall() {
+        return id_hall;
     }
 
-    public void setIdHall(int idHall) {
-        this.idHall = idHall;
+    public void setId_hall(int id_hall) {
+        this.id_hall = id_hall;
     }
 
-    @Basic
-    @Column(name = "hall_name", nullable = true, length = 45)
     public String getHallName() {
         return hallName;
     }
@@ -67,8 +72,6 @@ public class HallEntity {
         this.hallName = hallName;
     }
 
-    @Basic
-    @Column(name = "hall_rows", nullable = false)
     public int getHallRows() {
         return hallRows;
     }
@@ -77,8 +80,6 @@ public class HallEntity {
         this.hallRows = hallRows;
     }
 
-    @Basic
-    @Column(name = "hall_places", nullable = false)
     public int getHallPlaces() {
         return hallPlaces;
     }
@@ -94,7 +95,7 @@ public class HallEntity {
 
         HallEntity that = (HallEntity) o;
 
-        if (idHall != that.idHall) return false;
+        if (id_hall != that.id_hall) return false;
         if (hallRows != that.hallRows) return false;
         if (hallPlaces != that.hallPlaces) return false;
         if (hallName != null ? !hallName.equals(that.hallName) : that.hallName != null) return false;
@@ -104,7 +105,7 @@ public class HallEntity {
 
     @Override
     public int hashCode() {
-        int result = idHall;
+        int result = id_hall;
         result = 31 * result + (hallName != null ? hallName.hashCode() : 0);
         result = 31 * result + hallRows;
         result = 31 * result + hallPlaces;

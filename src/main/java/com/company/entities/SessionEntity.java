@@ -8,9 +8,12 @@ import java.util.List;
 @Table(name = "session")
 public class SessionEntity {
 
-    private int idSession;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_session;
+
+    @Column(name = "session_date")
     private Date sessionDate;
-    private Integer idSesionHall;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_film")
@@ -58,34 +61,20 @@ public class SessionEntity {
         this.film = film;
     }
 
-    @Id
-    @Column(name = "id_session", nullable = false)
-    public int getIdSession() {
-        return idSession;
+    public int getId_session() {
+        return id_session;
     }
 
-    public void setIdSession(int idSession) {
-        this.idSession = idSession;
+    public void setId_session(int id_session) {
+        this.id_session = id_session;
     }
 
-    @Basic
-    @Column(name = "session_date", nullable = true)
     public Date getSessionDate() {
         return sessionDate;
     }
 
     public void setSessionDate(Date sessionDate) {
         this.sessionDate = sessionDate;
-    }
-
-    @Basic
-    @Column(name = "id_sesion_hall", nullable = true)
-    public Integer getIdSesionHall() {
-        return idSesionHall;
-    }
-
-    public void setIdSesionHall(Integer idSesionHall) {
-        this.idSesionHall = idSesionHall;
     }
 
     @Override
@@ -95,18 +84,16 @@ public class SessionEntity {
 
         SessionEntity that = (SessionEntity) o;
 
-        if (idSession != that.idSession) return false;
+        if (id_session != that.id_session) return false;
         if (sessionDate != null ? !sessionDate.equals(that.sessionDate) : that.sessionDate != null) return false;
-        if (idSesionHall != null ? !idSesionHall.equals(that.idSesionHall) : that.idSesionHall != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = idSession;
+        int result = id_session;
         result = 31 * result + (sessionDate != null ? sessionDate.hashCode() : 0);
-        result = 31 * result + (idSesionHall != null ? idSesionHall.hashCode() : 0);
         return result;
     }
 }

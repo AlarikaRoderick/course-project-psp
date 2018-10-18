@@ -21,9 +21,8 @@ public class HibernateSessionFactory {
                 configuration.addAnnotatedClass(SessionEntity.class);
                 configuration.addAnnotatedClass(UserEntity.class);
 
-                StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-                        .applySettings(configuration.getProperties());
-                sessionFactory = configuration.buildSessionFactory(builder.build());
+                //StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+                sessionFactory = configuration.buildSessionFactory();
             }catch (Exception e){
                 e.printStackTrace();
             }

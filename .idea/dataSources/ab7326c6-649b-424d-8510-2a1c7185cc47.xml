@@ -8,7 +8,7 @@
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
     <schema id="2" parent="1" name="bank">
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="cinema">
       <Current>1</Current>
@@ -1069,72 +1069,55 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="263" parent="234" name="id_user_idx">
-      <ColNames>id_user</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="264" parent="234" name="PRIMARY">
+    <key id="263" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_order</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="265" parent="234" name="id_order_ticket">
+    <foreign-key id="264" parent="234" name="id_ticket_user">
       <ColNames>id_order</ColNames>
-      <RefSchemaName>cinema</RefSchemaName>
-      <RefTableName>ticket</RefTableName>
-      <RefColNames>id_ticket</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="266" parent="234" name="id_user">
-      <ColNames>id_user</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id_user</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="267" parent="235" name="id_session">
+    <column id="265" parent="235" name="id_session">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="235" name="session_date">
+    <column id="266" parent="235" name="session_date">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="235" name="id_session_film">
+    <column id="267" parent="235" name="id_session_film">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="235" name="id_sesion_hall">
+    <column id="268" parent="235" name="id_hall">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="235" name="id_hall">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="272" parent="235" name="id_film_idx">
+    <index id="269" parent="235" name="id_session_film_idx">
       <ColNames>id_session_film</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="273" parent="235" name="id_hall_idx">
+    <index id="270" parent="235" name="id_hall_idx">
       <ColNames>id_hall</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="274" parent="235" name="PRIMARY">
+    <key id="271" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_session</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="275" parent="235" name="id_session_ticket">
+    <foreign-key id="272" parent="235" name="id_session_ticket">
       <ColNames>id_session</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>ticket</RefTableName>
@@ -1142,7 +1125,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="276" parent="235" name="id_session_film">
+    <foreign-key id="273" parent="235" name="id_session_film">
       <ColNames>id_session_film</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>film</RefTableName>
@@ -1150,7 +1133,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="277" parent="235" name="id_hall">
+    <foreign-key id="274" parent="235" name="id_hall">
       <ColNames>id_hall</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>hall</RefTableName>
@@ -1158,62 +1141,62 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="278" parent="236" name="id_ticket">
+    <column id="275" parent="236" name="id_ticket">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="236" name="ticket_price">
+    <column id="276" parent="236" name="ticket_price">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="280" parent="236" name="PRIMARY">
+    <key id="277" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_ticket</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="281" parent="237" name="id_user">
+    <column id="278" parent="237" name="id_user">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="237" name="user_name">
+    <column id="279" parent="237" name="user_name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="237" name="user_surname">
+    <column id="280" parent="237" name="user_surname">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="237" name="user_age">
+    <column id="281" parent="237" name="user_age">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="237" name="user_login">
+    <column id="282" parent="237" name="user_login">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="237" name="user_password">
+    <column id="283" parent="237" name="user_password">
       <Position>6</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="237" name="PRIMARY">
+    <key id="284" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>

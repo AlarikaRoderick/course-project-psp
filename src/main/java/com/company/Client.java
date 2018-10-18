@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.dao.cinema.CinemaService;
+import com.company.entities.CinemaEntity;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

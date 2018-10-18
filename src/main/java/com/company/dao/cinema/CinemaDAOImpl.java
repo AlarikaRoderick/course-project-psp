@@ -2,39 +2,28 @@ package com.company.dao.cinema;
 
 import com.company.entities.CinemaEntity;
 import com.company.entities.HallEntity;
+import com.company.transaction.TransactionUtil;
 import com.company.utils.HibernateSessionFactory;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class CinemaDAOImpl implements CinemaDAO {
+    private TransactionUtil<CinemaEntity> cinemaEntityTransactionUtil = new TransactionUtil<>();
+
     public CinemaEntity findCinemaById(int id) {
         return HibernateSessionFactory.getSessionFactory().openSession().get(CinemaEntity.class, id);
     }
 
     public void saveCinema(CinemaEntity cinema) {
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(cinema);
-        transaction.commit();
-        session.close();
+        cinemaEntityTransactionUtil.save(cinema);
     }
 
     public void updateCinema(CinemaEntity cinema) {
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(cinema);
-        transaction.commit();
-        session.close();
+        cinemaEntityTransactionUtil.update(cinema);
     }
 
     public void deleteCinema(CinemaEntity cinema) {
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.delete(cinema);
-        transaction.commit();
-        session.close();
+        cinemaEntityTransactionUtil.delete(cinema);
     }
 
     public HallEntity findHallById(int id) {

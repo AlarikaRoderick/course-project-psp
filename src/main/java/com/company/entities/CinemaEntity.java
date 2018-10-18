@@ -7,10 +7,19 @@ import java.util.List;
 @Entity
 @Table(name = "cinema")
 public class CinemaEntity {
-    private int idCinema;
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_cinema;
+
+    @Column(name="cinema_name")
     private String cinemaName;
+
+    @Column(name = "cinema_address")
     private String cinemaAddress;
+
+    @Column(name = "cinema_underground")
     private String cinemaUnderground;
+
+    @Column(name = "cinema_phone")
     private String cinemaPhone;
 
     @OneToMany(mappedBy = "cinema", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -43,18 +52,14 @@ public class CinemaEntity {
         this.hallEntities = hallEntities;
     }
 
-    @Id
-    @Column(name = "id_cinema", nullable = false)
-    public int getIdCinema() {
-        return idCinema;
+    public int getId_cinema() {
+        return id_cinema;
     }
 
-    public void setIdCinema(int idCinema) {
-        this.idCinema = idCinema;
+    public void setId_cinema(int id_cinema) {
+        this.id_cinema = id_cinema;
     }
 
-    @Basic
-    @Column(name = "cinema_name", nullable = false, length = 45)
     public String getCinemaName() {
         return cinemaName;
     }
@@ -63,8 +68,6 @@ public class CinemaEntity {
         this.cinemaName = cinemaName;
     }
 
-    @Basic
-    @Column(name = "cinema_address", nullable = false, length = 45)
     public String getCinemaAddress() {
         return cinemaAddress;
     }
@@ -73,8 +76,6 @@ public class CinemaEntity {
         this.cinemaAddress = cinemaAddress;
     }
 
-    @Basic
-    @Column(name = "cinema_underground", nullable = false, length = 45)
     public String getCinemaUnderground() {
         return cinemaUnderground;
     }
@@ -83,8 +84,6 @@ public class CinemaEntity {
         this.cinemaUnderground = cinemaUnderground;
     }
 
-    @Basic
-    @Column(name = "cinema_phone", nullable = false, length = 45)
     public String getCinemaPhone() {
         return cinemaPhone;
     }
@@ -100,7 +99,7 @@ public class CinemaEntity {
 
         CinemaEntity that = (CinemaEntity) o;
 
-        if (idCinema != that.idCinema) return false;
+        if (id_cinema != that.id_cinema) return false;
         if (cinemaName != null ? !cinemaName.equals(that.cinemaName) : that.cinemaName != null) return false;
         if (cinemaAddress != null ? !cinemaAddress.equals(that.cinemaAddress) : that.cinemaAddress != null)
             return false;
@@ -113,7 +112,7 @@ public class CinemaEntity {
 
     @Override
     public int hashCode() {
-        int result = idCinema;
+        int result = id_cinema;
         result = 31 * result + (cinemaName != null ? cinemaName.hashCode() : 0);
         result = 31 * result + (cinemaAddress != null ? cinemaAddress.hashCode() : 0);
         result = 31 * result + (cinemaUnderground != null ? cinemaUnderground.hashCode() : 0);

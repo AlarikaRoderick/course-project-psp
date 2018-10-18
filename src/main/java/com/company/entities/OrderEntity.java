@@ -5,11 +5,19 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
-@Table(name = "order", schema = "cinema", catalog = "")
+@Table(name = "order")
 public class OrderEntity {
-    private int idOrder;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_order;
+
+    @Column(name = "date_order")
     private Timestamp dateOrder;
+
+    @Column(name = "numb_tickets")
     private Integer numbTickets;
+
+    @Column(name = "order_sum")
     private Integer orderSum;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -44,18 +52,14 @@ public class OrderEntity {
         this.ticketEntities = ticketEntities;
     }
 
-    @Id
-    @Column(name = "id_order", nullable = false)
-    public int getIdOrder() {
-        return idOrder;
+    public int getId_order() {
+        return id_order;
     }
 
-    public void setIdOrder(int idOrder) {
-        this.idOrder = idOrder;
+    public void setId_order(int id_order) {
+        this.id_order = id_order;
     }
 
-    @Basic
-    @Column(name = "date_order", nullable = true)
     public Timestamp getDateOrder() {
         return dateOrder;
     }
@@ -64,8 +68,6 @@ public class OrderEntity {
         this.dateOrder = dateOrder;
     }
 
-    @Basic
-    @Column(name = "numb_tickets", nullable = true)
     public Integer getNumbTickets() {
         return numbTickets;
     }
@@ -74,8 +76,6 @@ public class OrderEntity {
         this.numbTickets = numbTickets;
     }
 
-    @Basic
-    @Column(name = "order_sum", nullable = true)
     public Integer getOrderSum() {
         return orderSum;
     }
@@ -91,7 +91,7 @@ public class OrderEntity {
 
         OrderEntity that = (OrderEntity) o;
 
-        if (idOrder != that.idOrder) return false;
+        if (id_order != that.id_order) return false;
         if (dateOrder != null ? !dateOrder.equals(that.dateOrder) : that.dateOrder != null) return false;
         if (numbTickets != null ? !numbTickets.equals(that.numbTickets) : that.numbTickets != null) return false;
         if (orderSum != null ? !orderSum.equals(that.orderSum) : that.orderSum != null) return false;
@@ -101,7 +101,7 @@ public class OrderEntity {
 
     @Override
     public int hashCode() {
-        int result = idOrder;
+        int result = id_order;
         result = 31 * result + (dateOrder != null ? dateOrder.hashCode() : 0);
         result = 31 * result + (numbTickets != null ? numbTickets.hashCode() : 0);
         result = 31 * result + (orderSum != null ? orderSum.hashCode() : 0);

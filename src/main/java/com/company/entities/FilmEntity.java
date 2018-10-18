@@ -9,17 +9,24 @@ public class FilmEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idFilm;
+    private int id_film;
 
+    @Column(name = "film_name")
     private String filmName;
-    private String filmGenre;
-    private String filmTime;
-    private String filmRating;
 
-    public FilmEntity(){}
+    @Column(name = "film_genre")
+    private String filmGenre;
+
+    @Column(name = "film_time")
+    private String filmTime;
+
+    @Column(name = "film_rating")
+    private String filmRating;
 
     @OneToMany(mappedBy = "film", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SessionEntity> sessionEntities;
+
+    public FilmEntity(){}
 
     public void addSession(SessionEntity session){
         session.setFilm(this);
@@ -38,18 +45,14 @@ public class FilmEntity {
         this.sessionEntities = sessionEntities;
     }
 
-    @Id
-    @Column(name = "id_film", nullable = false)
-    public int getIdFilm() {
-        return idFilm;
+    public int getId_film() {
+        return id_film;
     }
 
-    public void setIdFilm(int idFilm) {
-        this.idFilm = idFilm;
+    public void setId_film(int id_film) {
+        this.id_film = id_film;
     }
 
-    @Basic
-    @Column(name = "film_name", nullable = false, length = 45)
     public String getFilmName() {
         return filmName;
     }
@@ -58,8 +61,6 @@ public class FilmEntity {
         this.filmName = filmName;
     }
 
-    @Basic
-    @Column(name = "film_genre", nullable = false, length = 45)
     public String getFilmGenre() {
         return filmGenre;
     }
@@ -68,8 +69,6 @@ public class FilmEntity {
         this.filmGenre = filmGenre;
     }
 
-    @Basic
-    @Column(name = "film_time", nullable = false, length = 45)
     public String getFilmTime() {
         return filmTime;
     }
@@ -78,8 +77,6 @@ public class FilmEntity {
         this.filmTime = filmTime;
     }
 
-    @Basic
-    @Column(name = "film_rating", nullable = true, length = 45)
     public String getFilmRating() {
         return filmRating;
     }
@@ -95,7 +92,7 @@ public class FilmEntity {
 
         FilmEntity that = (FilmEntity) o;
 
-        if (idFilm != that.idFilm) return false;
+        if (id_film != that.id_film) return false;
         if (filmName != null ? !filmName.equals(that.filmName) : that.filmName != null) return false;
         if (filmGenre != null ? !filmGenre.equals(that.filmGenre) : that.filmGenre != null) return false;
         if (filmTime != null ? !filmTime.equals(that.filmTime) : that.filmTime != null) return false;
@@ -106,7 +103,7 @@ public class FilmEntity {
 
     @Override
     public int hashCode() {
-        int result = idFilm;
+        int result = id_film;
         result = 31 * result + (filmName != null ? filmName.hashCode() : 0);
         result = 31 * result + (filmGenre != null ? filmGenre.hashCode() : 0);
         result = 31 * result + (filmTime != null ? filmTime.hashCode() : 0);

@@ -2,6 +2,9 @@ package com.company.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.company.dao.cinema.CinemaService;
+import com.company.entities.CinemaEntity;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -29,6 +32,12 @@ public class FirstPageController {
 
     @FXML
     void initialize() {
-
+        CinemaService cinemaService = new CinemaService();
+        CinemaEntity cinemaEntity = new CinemaEntity();
+        cinemaEntity.setCinemaName("Cinema");
+        cinemaEntity.setCinemaAddress("street");
+        cinemaEntity.setCinemaPhone("+1111111");
+        cinemaEntity.setCinemaUnderground("Malina");
+        cinemaService.saveCinema(cinemaEntity);
     }
 }

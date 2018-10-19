@@ -1,16 +1,22 @@
 package com.company.controllers;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.company.dao.cinema.CinemaService;
-import com.company.entities.CinemaEntity;
+import com.company.entities.UserEntity;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class FirstPageController {
+public class FirstPageController implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -30,14 +36,43 @@ public class FirstPageController {
     @FXML
     private Button signUpButton;
 
-    @FXML
-    void initialize() {
-        CinemaService cinemaService = new CinemaService();
-        CinemaEntity cinemaEntity = new CinemaEntity();
-        cinemaEntity.setCinemaName("Cinema");
-        cinemaEntity.setCinemaAddress("street");
-        cinemaEntity.setCinemaPhone("+1111111");
-        cinemaEntity.setCinemaUnderground("Malina");
-        cinemaService.saveCinema(cinemaEntity);
+    private Socket socket;
+    private ObjectInputStream objectInputStream;
+    private ObjectOutputStream objectOutputStream;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        enterButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    socket = new Socket("localhost", 1111);
+                    objectInputStream = new ObjectInputStream(socket.getInputStream());
+                    objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+                    UserEntity user = new UserEntity();
+                    String login = loginInputField.getText().trim();
+                    String password = passwordInputField.getText().trim();
+                    user.setUserLogin(login);
+                    user.setUserPassword(password);
+                    System.out.println(login + " " + password);
+                    objectOutputStream.writeObject(user);
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        signUpButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+    }
+
+    private void createConnection(ObjectInputStream objectInputStream, ObjectOutputStream objectOutputStream) throws IOException {
+        Socket socket = new Socket("localhost", 1111);
+        objectInputStream = new ObjectInputStream(socket.getInputStream());
+        objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.UserPageController">
+   <children>
+      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="314.0" layoutY="31.0" text="Страница пользователя">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="affiche" layoutX="314.0" layoutY="89.0" mnemonicParsing="false" text="Афиша" />
+      <Button fx:id="checkOrder" layoutX="316.0" layoutY="130.0" mnemonicParsing="false" text="Просмотреть заказ" />
+   </children>
+</AnchorPane>

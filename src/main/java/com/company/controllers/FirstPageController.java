@@ -1,22 +1,19 @@
 package com.company.controllers;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.company.entities.UserEntity;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import com.company.service.ChangeWindow;
+import com.company.service.FirstPageService;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.json.simple.JSONObject;
 
-public class FirstPageController implements Initializable {
+public class FirstPageController {
 
     @FXML
     private ResourceBundle resources;
@@ -36,43 +33,39 @@ public class FirstPageController implements Initializable {
     @FXML
     private Button signUpButton;
 
-    private Socket socket;
-    private ObjectInputStream objectInputStream;
-    private ObjectOutputStream objectOutputStream;
+    private FirstPageService firstPageService = new FirstPageService();
+    private ChangeWindow changeWindow = new ChangeWindow();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        enterButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    socket = new Socket("localhost", 1111);
-                    objectInputStream = new ObjectInputStream(socket.getInputStream());
-                    objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-                    UserEntity user = new UserEntity();
-                    String login = loginInputField.getText().trim();
-                    String password = passwordInputField.getText().trim();
-                    user.setUserLogin(login);
-                    user.setUserPassword(password);
-                    System.out.println(login + " " + password);
-                    objectOutputStream.writeObject(user);
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
+    public void signIn() {
+        UserEntity user = createUser();
+        JSONObject object = new JSONObject();
+        object.put("action", "signIn");
+        object.put("user", user);
+        try {
+            String request = firstPageService.signInUser(object);
+            if (request.equals("suchUserExist")) {
+                System.out.println("Вход выполнен успешно");
+                changeWindow.changeWindow(enterButton, "src/main/resources/fxml/userPage.fxml");
             }
-        });
-
-        signUpButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void createConnection(ObjectInputStream objectInputStream, ObjectOutputStream objectOutputStream) throws IOException {
-        Socket socket = new Socket("localhost", 1111);
-        objectInputStream = new ObjectInputStream(socket.getInputStream());
-        objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+    public void signUp() {
+        try {
+            changeWindow.changeWindow(signUpButton, "src/main/resources/fxml/registerPage.fxml");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private UserEntity createUser(){
+        UserEntity user = new UserEntity();
+        String login = loginInputField.getText().trim();
+        String password = passwordInputField.getText().trim();
+        user.setUserLogin(login);
+        user.setUserPassword(password);
+        return user;
     }
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.RegisterPageController">
+    <children>
+        <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #b367ea#b367ea;">
+            <children>
+                <Label layoutX="194.0" layoutY="13.0" text="Регистрация">
+                    <font>
+                        <Font name="Times New Roman" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+      <TextField fx:id="nameField" layoutX="289.0" layoutY="95.0" prefHeight="27.0" prefWidth="249.0" promptText="Введите имя">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="surnameField" layoutX="289.0" layoutY="134.0" prefHeight="27.0" prefWidth="249.0" promptText="Введите фамилию">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="ageField" layoutX="289.0" layoutY="173.0" prefHeight="27.0" prefWidth="249.0" promptText="Введите возраст">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="loginField" layoutX="289.0" layoutY="212.0" prefHeight="27.0" prefWidth="249.0" promptText="Введите логин">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="145.0" layoutY="134.0" text="Фамилия">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="95.0" text="Имя">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="173.0" text="Возраст">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="212.0" text="Логин">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="253.0" text="Пароль">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpButton" layoutX="204.0" layoutY="314.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="193.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea;" onAction="#signUpUser" text="Зарегистрироваться">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="passwordField" layoutX="288.0" layoutY="254.0" prefHeight="27.0" prefWidth="249.0" promptText="Введите пароль">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </PasswordField>
+    </children>
+
+</AnchorPane>

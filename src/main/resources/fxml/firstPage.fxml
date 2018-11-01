@@ -29,13 +29,13 @@
             <Font name="Times New Roman" size="17.0" />
          </font>
       </PasswordField>
-      <Button fx:id="enterButton" layoutX="220.0" layoutY="261.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Войти">
+      <Button fx:id="enterButton" layoutX="220.0" layoutY="261.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" onAction="#signIn" text="Войти">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Button>
       <ButtonBar layoutX="67.0" layoutY="88.0" prefHeight="40.0" prefWidth="200.0" />
-      <Button fx:id="signUpButton" layoutX="221.0" layoutY="312.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Зарегистрироваться">
+      <Button fx:id="signUpButton" layoutX="221.0" layoutY="312.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" onAction="#signUp" text="Зарегистрироваться">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>

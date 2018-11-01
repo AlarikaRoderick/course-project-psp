@@ -1,7 +1,5 @@
-package com.company;
+package com.company.client;
 
-import com.company.dao.cinema.CinemaService;
-import com.company.entities.CinemaEntity;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +8,7 @@ import javafx.stage.Stage;
 
 public class Client extends Application {
     public void start(Stage stage) throws Exception {
-        String fxmlFile = "/fxmlPages/firstPage.fxml";
+        String fxmlFile = "/fxml/firstPage.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
         stage.setTitle("Вход");
@@ -19,6 +17,8 @@ public class Client extends Application {
     }
 
     public static void main(String[] args) throws Exception {
+        ClientConnection.createConnection();
+        System.out.println("connection established");
         launch(args);
     }
 }

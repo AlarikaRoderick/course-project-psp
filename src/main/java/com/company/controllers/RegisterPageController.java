@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.company.entities.UserEntity;
+import com.company.service.ChangeWindow;
 import com.company.service.RegisterPageService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -38,11 +39,23 @@ public class RegisterPageController {
     @FXML
     private Button signUpButton;
 
+    @FXML
+    private Button backButton;
+
     private RegisterPageService registerPageService = new RegisterPageService();
+    private ChangeWindow changeWindow = new ChangeWindow();
 
     @FXML
     void initialize() {
 
+    }
+
+    public void backToMainPage(){
+        try {
+            changeWindow.changeWindow(backButton, "src/main/resources/fxml/firstPage.fxml");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void signUpUser(){
@@ -54,6 +67,7 @@ public class RegisterPageController {
             String request = registerPageService.signUpUser(object);
             if (request.equals("successfulSignUp")) {
                 System.out.println("Пользователь успешно зарегистрирован");
+                clearFields();
             }
         }catch (IOException | ClassNotFoundException e){
             e.printStackTrace();
@@ -68,5 +82,13 @@ public class RegisterPageController {
         user.setUserLogin(loginField.getText());
         user.setUserPassword(passwordField.getText());
         return user;
+    }
+
+    private void clearFields(){
+        nameField.clear();
+        surnameField.clear();
+        ageField.clear();
+        loginField.clear();
+        passwordField.clear();
     }
 }

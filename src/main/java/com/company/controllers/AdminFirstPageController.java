@@ -37,7 +37,7 @@ public class AdminFirstPageController {
 
     public void goToFilmPage(){
         try {
-            changeWindow.changeWindow(filmButton, "src/main/resources/fxml/adminFilmPage.fxml");
+            changeWindow.changeWindow(filmButton, "/fxml/adminFilmPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class AdminFirstPageController {
 
     public void goToSessionPage(){
         try{
-            changeWindow.changeWindow(sessionButton, "src/main/resources/fxml/adminSessionPage.fxml");
+            changeWindow.changeWindow(sessionButton, "/fxml/adminSessionPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class AdminFirstPageController {
 
     public void goToTicketPage(){
         try{
-            changeWindow.changeWindow(ticketButton, "src/main/resources/fxml/adminTicketPage.fxml");
+            changeWindow.changeWindow(ticketButton, "/fxml/adminTicketPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class AdminFirstPageController {
 
     public void goToUserPage(){
         try{
-            changeWindow.changeWindow(userButton, "src/main/resources/fxml/adminUserPage.fxml");
+            changeWindow.changeWindow(userButton, "/fxml/adminUserPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }

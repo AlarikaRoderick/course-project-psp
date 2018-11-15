@@ -21,6 +21,8 @@ public class UserEntity implements Serializable {
     private String userLogin;
     @Column(name = "user_password")
     private String userPassword;
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderEntity> orderEntities;
@@ -88,6 +90,14 @@ public class UserEntity implements Serializable {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     @Override

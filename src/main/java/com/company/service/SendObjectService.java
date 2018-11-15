@@ -11,7 +11,15 @@ public class SendObjectService {
         ClientConnection.getObjectOutputStream().writeObject(object);
     }
 
+    public static void sendMessage(String message) throws IOException{
+        ClientConnection.getObjectOutputStream().writeObject(message);
+    }
+
     public static String getMessage() throws IOException, ClassNotFoundException{
         return (String) ClientConnection.getObjectInputStream().readObject();
+    }
+
+    public static JSONObject getObject() throws IOException, ClassNotFoundException{
+        return (JSONObject) ClientConnection.getObjectInputStream().readObject();
     }
 }

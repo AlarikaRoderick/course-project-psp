@@ -52,7 +52,7 @@ public class RegisterPageController {
 
     public void backToMainPage(){
         try {
-            changeWindow.changeWindow(backButton, "src/main/resources/fxml/firstPage.fxml");
+            changeWindow.changeWindow(backButton, "/fxml/firstPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -81,6 +81,7 @@ public class RegisterPageController {
         user.setUserAge(Integer.parseInt(ageField.getText()));
         user.setUserLogin(loginField.getText());
         user.setUserPassword(passwordField.getText());
+        user.setAdmin(false);
         return user;
     }
 

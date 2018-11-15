@@ -43,9 +43,15 @@ public class FirstPageController {
         object.put("user", user);
         try {
             String request = firstPageService.signInUser(object);
-            if (request.equals("suchUserExist")) {
-                System.out.println("Вход выполнен успешно");
-                changeWindow.changeWindow(enterButton, "src/main/resources/fxml/userPage.fxml");
+            switch (request){
+                case "suchUserExist":
+                    System.out.println("Вход выполнен успешно");
+                    changeWindow.changeWindow(enterButton, "/fxml/userPage.fxml");
+                    break;
+                case "suchUserAdmin":
+                    System.out.println("Вы вошли как администратор");
+                    changeWindow.changeWindow(enterButton, "/fxml/adminFirstPage.fxml");
+                    break;
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -54,7 +60,7 @@ public class FirstPageController {
 
     public void signUp() {
         try {
-            changeWindow.changeWindow(signUpButton, "src/main/resources/fxml/registerPage.fxml");
+            changeWindow.changeWindow(signUpButton, "/fxml/registerPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }

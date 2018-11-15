@@ -1,14 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.company.controllers.AdminFilmPageController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.AdminFilmPageController">
+   <children>
+      <HBox layoutX="-2.0" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <SplitPane dividerPositions="0.5077951002227171" prefHeight="600.0" prefWidth="900.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="filmTable" layoutX="1.0" prefHeight="500.0" prefWidth="450.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="34.9419379234314" text="id" />
+                            <TableColumn fx:id="filmNameColumn" prefWidth="166.01519393920898" text="Название" />
+                              <TableColumn fx:id="genreFilmColumn" prefWidth="100.98480224609375" text="Жанр" />
+                              <TableColumn fx:id="timeColumn" prefWidth="147.30810546875" text="Продолжительность" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="38.0" layoutY="12.0" text="Информация о фильме">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="39.0" layoutY="63.0" text="Название фильма">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="filmNameField" layoutX="234.0" layoutY="59.0" promptText="название" />
+                        <Label layoutX="39.0" layoutY="102.0" text="Жанр фильма">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="genreFilmField" layoutX="235.0" layoutY="99.0" promptText="жанр" />
+                        <Label layoutX="40.0" layoutY="143.0" text="Продолжительность">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="timeField" layoutX="235.0" layoutY="138.0" promptText="продолжительность" />
+                        <Label layoutX="40.0" layoutY="183.0" text="Возрастной рейтинг">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ageRatingField" layoutX="235.0" layoutY="179.0" promptText="возрастной рейтинг" />
+                        <Button fx:id="updateFilmButton" layoutX="93.0" layoutY="241.0" mnemonicParsing="false" text="Сохранить">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteFilmButton" layoutX="244.0" layoutY="242.0" mnemonicParsing="false" text="Удалить">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addNewFilmButton" layoutX="103.0" layoutY="326.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="208.0" text="Добавить новый фильм" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>

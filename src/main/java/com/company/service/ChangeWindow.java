@@ -15,8 +15,8 @@ public class ChangeWindow {
     public void changeWindow(Button button, String window) throws IOException {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
-        URL path = new File(window).toURL();
-        Parent root = FXMLLoader.load(path);
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = loader.load(getClass().getResourceAsStream(window));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

@@ -1,11 +1,12 @@
 package com.company.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "film")
-public class FilmEntity {
+public class FilmEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +28,13 @@ public class FilmEntity {
     private List<SessionEntity> sessionEntities;
 
     public FilmEntity(){}
+
+    public FilmEntity(String filmName, String filmGenre, String filmTime, String filmRating) {
+        this.filmName = filmName;
+        this.filmGenre = filmGenre;
+        this.filmTime = filmTime;
+        this.filmRating = filmRating;
+    }
 
     public void addSession(SessionEntity session){
         session.setFilm(this);

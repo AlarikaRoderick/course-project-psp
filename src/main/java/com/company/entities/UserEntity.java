@@ -24,6 +24,18 @@ public class UserEntity implements Serializable {
     @Column(name = "isAdmin")
     private boolean isAdmin;
 
+    public UserEntity(String userName, String userSurname, int userAge, String userLogin, String userPassword, boolean isAdmin) {
+        this.userName = userName;
+        this.userSurname = userSurname;
+        this.userAge = userAge;
+        this.userLogin = userLogin;
+        this.userPassword = userPassword;
+        this.isAdmin = isAdmin;
+    }
+
+    public UserEntity() {
+    }
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderEntity> orderEntities;
 

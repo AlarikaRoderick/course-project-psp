@@ -36,6 +36,11 @@
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Button>
+      <Button fx:id="exitButton" layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onAction="#goToFirstPage" prefHeight="36.0" prefWidth="110.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Выход">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Button>
     </children>
 
 </AnchorPane>

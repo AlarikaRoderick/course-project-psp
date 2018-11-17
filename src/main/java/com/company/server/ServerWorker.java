@@ -5,6 +5,7 @@ import com.company.dao.film.FilmService;
 import com.company.dao.user.UserService;
 import com.company.entities.*;
 import com.company.server.service.SendObjectService;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.json.simple.JSONObject;
 import java.io.IOException;
@@ -46,7 +47,8 @@ public class ServerWorker {
                                 System.out.println("Администратор");
                                 this.sendObjectService.sendMessage("suchUserAdmin");
                             }
-                            this.sendObjectService.sendMessage("suchUserExist");
+                            else
+                                this.sendObjectService.sendMessage("suchUserExist");
                         }
                     }
                     break;
@@ -58,12 +60,48 @@ public class ServerWorker {
                     break;
                 case "getFilms":
                     List<FilmEntity> films = filmService.findAllFilms();
-                    ObservableList<FilmEntity> filmEntityObservableList = filmAdapter.convertFromListToObservableList(films);
+                    //ObservableList<FilmEntity> filmEntityObservableList = filmAdapter.convertFromListToObservableList(films);
+                    ObservableList<FilmEntity> filmEntityObservableList = FXCollections.observableList(films);
                     JSONObject object = new JSONObject();
                     object.put("filmList", filmEntityObservableList);
                     this.sendObjectService.sendObject(object);
                     break;
-
+                case "updateFilm":
+                    film = (FilmEntity) message.get("film");
+                    filmService.updateFilm(film);
+                    System.out.println("Фильм обновлен");
+                    this.sendObjectService.sendMessage("successfulUpdate");
+                    break;
+                case "deleteFilm":
+                    film = (FilmEntity) message.get("delFilm");
+                    filmService.deleteFilm(film);
+                    System.out.println("Фильм удален");
+                    this.sendObjectService.sendMessage("successfulDelete");
+                    break;
+                case "addFilm":
+                    film = (FilmEntity) message.get("addFilm");
+                    filmService.saveFilm(film);
+                    System.out.println("Фильм добавлен");
+                    this.sendObjectService.sendMessage("successfulAdd");
+                    break;
+                case "updateUser":
+                    user = (UserEntity) message.get("user");
+                    userService.updateUser(user);
+                    System.out.println("Пользователь обновлен");
+                    this.sendObjectService.sendMessage("successfulUpdate");
+                    break;
+                case "deleteUser":
+                    user = (UserEntity) message.get("user");
+                    userService.deleteUser(user);
+                    System.out.println("Пользователь удален");
+                    this.sendObjectService.sendMessage("successfulDelete");
+                    break;
+                case "addUser":
+                    user = (UserEntity) message.get("user");
+                    userService.saveUser(user);
+                    System.out.println("Пользователь добавлен");
+                    this.sendObjectService.sendMessage("successfulAdd");
+                    break;
             }
         }while (repeat);
     }

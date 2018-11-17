@@ -29,6 +29,9 @@ public class AdminFirstPageController {
     private Button userButton;
 
     @FXML
+    private Button exitButton;
+
+    @FXML
     void initialize() {
 
     }
@@ -62,6 +65,14 @@ public class AdminFirstPageController {
     public void goToUserPage(){
         try{
             changeWindow.changeWindow(userButton, "/fxml/adminUserPage.fxml");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void goToFirstPage(){
+        try{
+            changeWindow.changeWindow(exitButton, "/fxml/firstPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }

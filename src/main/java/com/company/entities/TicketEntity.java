@@ -13,11 +13,11 @@ public class TicketEntity {
     private int ticketPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_session")
+    @JoinColumn(name = "id_session_ticket")
     private SessionEntity session;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_order")
+    @JoinColumn(name = "id_order_ticket")
     private OrderEntity order;
 
     public SessionEntity getSession() {

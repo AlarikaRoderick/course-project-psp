@@ -64,7 +64,7 @@
             <Font name="Times New Roman" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="findFilmSessionButton" layoutX="563.0" layoutY="441.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="208.0" text="Просмотреть сеансы" textAlignment="CENTER">
+      <Button fx:id="findFilmSessionButton" onAction="#goToFilmSessionPage" layoutX="563.0" layoutY="441.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="208.0" text="Просмотреть сеансы" textAlignment="CENTER">
          <font>
             <Font name="Times New Roman" size="17.0" />
          </font>

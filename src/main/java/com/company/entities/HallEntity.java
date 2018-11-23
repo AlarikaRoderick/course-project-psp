@@ -24,7 +24,7 @@ public class HallEntity {
     private List<SessionEntity> sessionEntityList;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cinema")
+    @JoinColumn(name = "id_cinema_hall")
     private CinemaEntity cinema;
 
     public HallEntity(){}

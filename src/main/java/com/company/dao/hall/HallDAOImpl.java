@@ -37,7 +37,7 @@ public class HallDAOImpl implements HallDAO {
 
     @Override
     public List<HallEntity> findAll() {
-        List<HallEntity> hallEntities = (List<HallEntity>) HibernateSessionFactory.getSessionFactory().openSession().createQuery("From HallEntity ").list();
+        List<HallEntity> hallEntities = (List<HallEntity>) HibernateSessionFactory.getSessionFactory().openSession().createQuery("From HallEntity").list();
         return hallEntities;
     }
 }

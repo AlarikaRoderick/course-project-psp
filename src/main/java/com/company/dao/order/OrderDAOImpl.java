@@ -38,7 +38,7 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public List<OrderEntity> findAll() {
         List<OrderEntity> orderEntities = (List<OrderEntity>) HibernateSessionFactory.getSessionFactory()
-                .openSession().createQuery("From OrderEntity ").list();
+                .openSession().createQuery("From OrderEntity").list();
         return orderEntities;
     }
 }

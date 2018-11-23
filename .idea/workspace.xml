@@ -2,22 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec11ddc8-07ec-4018-97c0-967cce464c9d" name="Default" comment="added Services">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/adapter/UserAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminAddFilmPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/service/AdminAddFilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/service/AdminUserPageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/adminAddFilmPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/DbHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmSessionPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentFilmEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentUserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/adminFilmSessionPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ab7326c6-649b-424d-8510-2a1c7185cc47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ab7326c6-649b-424d-8510-2a1c7185cc47.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFirstPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFirstPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/hall/HallDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/hall/HallDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/HallEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/HallEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/SessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/SessionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/TicketEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/TicketEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/AdminFilmPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/AdminFilmPageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/adminFirstPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/adminFirstPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/userPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/userPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../psp_lab_1/.idea/description.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../psp_lab_1/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../psp_lab_1/.idea/modules.xml" beforeDir="false" />
@@ -69,80 +75,117 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="cinema@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cinema: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="cinema: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="cinema@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="cinema: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="film: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminUserPageController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="175" column="34" lean-forward="true" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FirstPageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+            <state relative-caret-position="104">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+            <state relative-caret-position="117">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminUserPageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminUserPageService.java">
+      <file leaf-file-name="SessionEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/SessionEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-133">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminUserPage.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file leaf-file-name="ServerWorker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="240">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
+              <folding>
+                <element signature="e#761#762#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/OrderEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/DbHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HibernateSessionFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/utils/HibernateSessionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/session/SessionDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-174">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -166,29 +209,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/ticket/TicketService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/user/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/user/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/Server.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/server/ServerMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/client_module/ClientWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/client/ClientMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/client/ClientWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/client/ClientConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/client/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/server/service/ServerConnectionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/server/service/ThreadService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/server/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/user/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/service/FirstPageService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxmlPages/userPage.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxmlPages/firstPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/firstPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/service/RegisterPageService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/registerPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminTicketPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminSessionPage.fxml" />
@@ -198,25 +226,40 @@
         <option value="$PROJECT_DIR$/src/main/java/com/company/server/service/SendObjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/dao/film/FilmDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/adapter/FilmAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/RegisterPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmEditMessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminFilmEditMessage.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/service/AdminFilmPageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/service/AdminAddFilmService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminAddFilmPageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminAddFilmPage.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFirstPageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminFirstPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/adapter/UserAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/service/AdminUserPageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentFilmEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/adminFilmSessionPage.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/session/SessionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentUserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/HallEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/TicketEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/SessionEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmSessionPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/dao/hall/HallDAOImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ab7326c6-649b-424d-8510-2a1c7185cc47/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/entities/OrderEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/DbHandler.java" />
       </list>
     </option>
   </component>
@@ -253,7 +296,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
-    <option name="height" value="685" />
+    <option name="height" value="683" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -263,7 +306,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,25 +347,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="adapter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-project-psp-cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-project-psp-cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-project-psp-cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-project-psp-cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="hall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-project-psp-cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-project-psp-cinema" type="b2602c69:ProjectViewProjectNode" />
@@ -370,8 +424,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,13 +433,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -551,7 +605,12 @@
       <workItem from="1542290580777" duration="953000" />
       <workItem from="1542382302300" duration="5629000" />
       <workItem from="1542432314963" duration="414000" />
-      <workItem from="1542438832717" duration="8793000" />
+      <workItem from="1542438832717" duration="9362000" />
+      <workItem from="1542613397803" duration="919000" />
+      <workItem from="1542643904997" duration="5974000" />
+      <workItem from="1542709039447" duration="545000" />
+      <workItem from="1542710774712" duration="2763000" />
+      <workItem from="1542988424702" duration="3383000" />
     </task>
     <task id="LOCAL-00001" summary="added connections between entities">
       <created>1539456802546</created>
@@ -602,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542259013435</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="добавлены страницы админа по фильмам и пользователям">
+      <created>1542463975394</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542463975394</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -611,38 +677,38 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83156000" />
+    <option name="totallyTimeSpent" value="97309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="685" extended-state="0" />
+    <frame x="0" y="23" width="1366" height="683" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007553" side_tool="true" weight="0.32756132" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32930514" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.32854986" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39419794" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32312927" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3225256" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007553" side_tool="true" weight="0.32756132" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32930514" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49924472" weight="0.3265306" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32142857" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3208191" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32756132" />
-      <window_info id="Capture Tool" order="6" />
       <window_info id="Persistence" order="2" sideWeight="0.50214595" side_tool="true" weight="0.2597809" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.2907855" />
-      <window_info anchor="right" id="Database" order="6" weight="0.32854986" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Database Console" order="11" weight="0.32593855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.3134441" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3962585" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="11" weight="0.32900432" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -689,11 +755,12 @@
     <MESSAGE value="client-server update" />
     <MESSAGE value="added adminPages" />
     <MESSAGE value="уже побольше всего есть" />
-    <option name="LAST_COMMIT_MESSAGE" value="уже побольше всего есть" />
+    <MESSAGE value="добавлены страницы админа по фильмам и пользователям" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены страницы админа по фильмам и пользователям" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="32" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -701,113 +768,137 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/utils/HibernateSessionFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/adapter/UserAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="127">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="1080">
+          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/registerPage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminUserPageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        <state relative-caret-position="390">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/userPage.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2535">
+          <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminFilmPageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        </state>
+      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminFilmSessionPage.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="1350">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/firstPage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/collections/FXCollections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="14" selection-end-line="45" />
+        <state relative-caret-position="117">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminSessionPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/film/FilmDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="110">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminTicketPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+    <entry file="das://ab7326c6-649b-424d-8510-2a1c7185cc47/schema/cinema/table/film">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminTicketPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentFilmEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminSessionPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/film/FilmService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
+        <state relative-caret-position="240">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/user/UserDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/session/SessionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="259">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+    <entry file="das://ab7326c6-649b-424d-8510-2a1c7185cc47/schema/cinema/table/session">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="313">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/service/SendObjectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="195">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/CinemaEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/adapter/Adapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/current/CurrentUserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#216#217#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="8413" selection-start-line="8413" selection-end-line="8413" />
         </state>
       </provider>
     </entry>
@@ -820,109 +911,22 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
+        <state relative-caret-position="103">
           <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="233">
           <caret line="198" selection-start-line="198" selection-end-line="198" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="8413" selection-start-line="8413" selection-end-line="8413" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/service/SendObjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/RegisterPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/FirstPageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="2569" selection-start-line="2569" selection-end-line="2569" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/RegisterPageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmEditMessageController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminFilmEditMessage.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/ChangeWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/film/FilmDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#881#882#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/film/FilmService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/service/ThreadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="105">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -933,151 +937,210 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/transaction/TransactionUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/user/UserDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="420">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/ServerMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/service/ThreadService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="315">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminAddFilmService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminAddFilmPage.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/FilmEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminAddFilmPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminFirstPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFirstPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminFilmPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="78" lean-forward="true" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/adapter/FilmAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/adapter/UserAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminFilmPageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+    <entry file="das://ab7326c6-649b-424d-8510-2a1c7185cc47/schema/cinema/table/hall">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="142">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/adminUserPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/CinemaEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+        <state relative-caret-position="90">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/service/AdminUserPageService.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state relative-caret-position="15">
+          <caret line="2569" selection-start-line="2569" selection-end-line="2569" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#66921#66922#0" expanded="true" />
+            <element signature="e#66966#66967#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminUserPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/UserPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="175" column="34" lean-forward="true" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
+        <state relative-caret-position="218">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/TicketEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/hall/HallDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="39" column="145" lean-forward="true" selection-start-line="39" selection-start-column="145" selection-end-line="39" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/AdminFilmSessionPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="86" column="23" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="86" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/HallEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/session/SessionDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/utils/HibernateSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.3.6.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="426" selection-start-line="426" selection-end-line="426" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.3.6.Final.jar!/org/hibernate/internal/AbstractSharedSessionContract.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="572" selection-start-line="572" selection-end-line="572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.3.6.Final.jar!/org/hibernate/query/internal/AbstractProducedQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="1152" selection-start-line="1152" selection-end-line="1152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ab7326c6-649b-424d-8510-2a1c7185cc47/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+          <folding>
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/dao/order/OrderDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/server/ServerWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/OrderEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/controllers/FirstPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/entities/SessionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/DbHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

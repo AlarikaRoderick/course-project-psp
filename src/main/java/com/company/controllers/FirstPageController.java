@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.company.dao.order.OrderService;
 import com.company.entities.UserEntity;
+import com.company.entities.current.CurrentUserEntity;
 import com.company.service.ChangeWindow;
 import com.company.service.FirstPageService;
 import javafx.fxml.FXML;
@@ -34,6 +36,7 @@ public class FirstPageController {
     private Button signUpButton;
 
     private FirstPageService firstPageService = new FirstPageService();
+    private OrderService orderService = new OrderService();
     private ChangeWindow changeWindow = new ChangeWindow();
 
     public void signIn() {
@@ -46,6 +49,7 @@ public class FirstPageController {
             switch (request){
                 case "suchUserExist":
                     System.out.println("Вход выполнен успешно");
+                    CurrentUserEntity.setUser(user);
                     changeWindow.changeWindow(enterButton, "/fxml/userPage.fxml");
                     break;
                 case "suchUserAdmin":

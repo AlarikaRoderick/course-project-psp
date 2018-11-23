@@ -1,6 +1,7 @@
 package com.company.entities;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class OrderEntity {
     private int id_order;
 
     @Column(name = "date_order")
-    private Timestamp dateOrder;
+    private Date dateOrder;
 
     @Column(name = "numb_tickets")
     private Integer numbTickets;
@@ -21,7 +22,7 @@ public class OrderEntity {
     private Integer orderSum;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "id_user_order")
     private UserEntity user;
 
     public UserEntity getUser() {
@@ -38,6 +39,15 @@ public class OrderEntity {
     public void addTicket(TicketEntity ticket){
         ticket.setOrder(this);
         ticketEntities.add(ticket);
+    }
+
+    public OrderEntity(){}
+
+    public OrderEntity(Date dateOrder, Integer numbTickets, Integer orderSum, UserEntity user) {
+        this.dateOrder = dateOrder;
+        this.numbTickets = numbTickets;
+        this.orderSum = orderSum;
+        this.user = user;
     }
 
     public void removeTicket(TicketEntity ticket){
@@ -60,11 +70,11 @@ public class OrderEntity {
         this.id_order = id_order;
     }
 
-    public Timestamp getDateOrder() {
+    public Date getDateOrder() {
         return dateOrder;
     }
 
-    public void setDateOrder(Timestamp dateOrder) {
+    public void setDateOrder(Date dateOrder) {
         this.dateOrder = dateOrder;
     }
 

@@ -2,6 +2,7 @@ package com.company.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,6 +32,7 @@ public class UserEntity implements Serializable {
         this.userLogin = userLogin;
         this.userPassword = userPassword;
         this.isAdmin = isAdmin;
+        orderEntities = new ArrayList<>();
     }
 
     public UserEntity() {

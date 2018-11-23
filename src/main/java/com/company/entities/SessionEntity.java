@@ -16,12 +16,18 @@ public class SessionEntity {
     private Date sessionDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_film")
+    @JoinColumn(name = "id_film_session")
     private FilmEntity film;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_hall")
+    @JoinColumn(name = "id_hall_session")
     private HallEntity hall;
+
+    @Column(name = "session_time_hour")
+    private int sessionTimeHour;
+
+    @Column(name = "session_time_minute")
+    private int sessionTimeMinute;
 
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TicketEntity> ticketEntities;
@@ -75,6 +81,22 @@ public class SessionEntity {
 
     public void setSessionDate(Date sessionDate) {
         this.sessionDate = sessionDate;
+    }
+
+    public int getSessionTimeHour() {
+        return sessionTimeHour;
+    }
+
+    public void setSessionTimeHour(int sessionTimeHour) {
+        this.sessionTimeHour = sessionTimeHour;
+    }
+
+    public int getSessionTimeMinute() {
+        return sessionTimeMinute;
+    }
+
+    public void setSessionTimeMinute(int sessionTimeMinute) {
+        this.sessionTimeMinute = sessionTimeMinute;
     }
 
     @Override

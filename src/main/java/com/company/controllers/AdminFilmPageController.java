@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.company.adapter.FilmAdapter;
 import com.company.dao.film.FilmService;
 import com.company.entities.FilmEntity;
+import com.company.entities.current.CurrentFilmEntity;
 import com.company.service.AdminFilmPageService;
 import com.company.service.ChangeWindow;
 import javafx.collections.ObservableList;
@@ -151,6 +152,16 @@ public class AdminFilmPageController {
     public void goToAdminFirstPage(){
         try{
             changeWindow.changeWindow(backButton, "/fxml/adminFirstPage.fxml");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void goToFilmSessionPage(){
+        try{
+            FilmEntity film = getFilmFromTextFields();
+            CurrentFilmEntity.setFilm(film);
+            changeWindow.changeWindow(findFilmSessionButton, "/fxml/adminFilmSessionPage.fxml");
         }catch (IOException e){
             e.printStackTrace();
         }

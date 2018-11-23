@@ -2,6 +2,7 @@ package com.company.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,6 +35,7 @@ public class FilmEntity implements Serializable {
         this.filmGenre = filmGenre;
         this.filmTime = filmTime;
         this.filmRating = filmRating;
+        sessionEntities = new ArrayList<>();
     }
 
     public void addSession(SessionEntity session){

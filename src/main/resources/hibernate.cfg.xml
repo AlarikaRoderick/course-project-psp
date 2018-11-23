@@ -15,7 +15,7 @@
         <mapping class="com.company.entities.CinemaEntity"/>
         <mapping class="com.company.entities.HallEntity"/>
         <mapping class="com.company.entities.FilmEntity"/>
-        <mapping class="com.company.entities.OrderEntity"/>
+        <!--<mapping class="com.company.entities.OrderEntity"/>-->
         <mapping class="com.company.entities.TicketEntity"/>
         <mapping class="com.company.entities.SessionEntity"/>
         <mapping class="com.company.entities.UserEntity"/>

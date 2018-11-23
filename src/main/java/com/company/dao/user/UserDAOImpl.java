@@ -1,6 +1,5 @@
 package com.company.dao.user;
 
-import com.company.entities.OrderEntity;
 import com.company.entities.UserEntity;
 import com.company.transaction.TransactionUtil;
 import com.company.utils.HibernateSessionFactory;
@@ -28,11 +27,6 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void deleteUser(UserEntity user) {
         userEntityTransactionUtil.delete(user);
-    }
-
-    @Override
-    public OrderEntity findOrderById(int id) {
-        return HibernateSessionFactory.getSessionFactory().openSession().get(OrderEntity.class, id);
     }
 
     @Override

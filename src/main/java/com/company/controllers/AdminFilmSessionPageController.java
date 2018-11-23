@@ -5,8 +5,11 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
+import com.company.dao.hall.HallService;
 import com.company.dao.session.SessionService;
+import com.company.entities.HallEntity;
 import com.company.entities.SessionEntity;
 import com.company.entities.current.CurrentFilmEntity;
 import javafx.collections.FXCollections;
@@ -82,6 +85,7 @@ public class AdminFilmSessionPageController {
     private Button backButton;
 
     private SessionService sessionService = new SessionService();
+    private HallService hallService = new HallService();
 
     @FXML
     void initialize() {
@@ -94,12 +98,23 @@ public class AdminFilmSessionPageController {
         sessionDateColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Date>("sessionDate"));
         sessionHourColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("sessionTimeHour"));
         sessionMinuteColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("sessionTimeMinute"));
-        hallNumberColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>(""));
+        //hallNumberColumn.setCellValueFactory(new PropertyValueFactory<HallEntity, Integer>("hallName"));
         List<SessionEntity> sessions = sessionService.findAllSessions();
+        List<HallEntity> halls = hallService.findAllHalls();
+        List<HallEntity> sessionHalls = new ArrayList<>();
+        for (HallEntity hall : halls){
+            for (SessionEntity session : sessions){
+                if (hall.getId_hall() == session.getHall().getId_hall()){
+                    sessionHalls.add(hall);
+                    System.out.println("ggg");
+                }
+            }
+        }
 
         ObservableList<SessionEntity> sessionEntities = FXCollections.observableList(sessions);
         if(sessionEntities != null) {
             sessionTable.setItems(sessionEntities);
+
         }
         initClick();
     }

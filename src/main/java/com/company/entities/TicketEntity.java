@@ -17,8 +17,8 @@ public class TicketEntity {
     private SessionEntity session;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_order_ticket")
-    private OrderEntity order;
+    @JoinColumn(name = "id_user_ticket")
+    private UserEntity user;
 
     public SessionEntity getSession() {
         return session;
@@ -26,14 +26,6 @@ public class TicketEntity {
 
     public void setSession(SessionEntity session) {
         this.session = session;
-    }
-
-    public OrderEntity getOrder() {
-        return order;
-    }
-
-    public void setOrder(OrderEntity order) {
-        this.order = order;
     }
 
     public int getId_ticket() {

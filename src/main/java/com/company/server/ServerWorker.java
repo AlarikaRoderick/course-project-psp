@@ -25,7 +25,6 @@ public class ServerWorker {
         CinemaEntity cinema = new CinemaEntity();
         FilmEntity film = new FilmEntity();
         HallEntity hall = new HallEntity();
-        OrderEntity order = new OrderEntity();
         SessionEntity session = new SessionEntity();
         TicketEntity ticket = new TicketEntity();
         UserEntity user;

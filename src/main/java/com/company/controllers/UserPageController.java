@@ -5,14 +5,11 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.company.dao.hall.HallService;
-import com.company.dao.order.OrderService;
 import com.company.dao.session.SessionService;
 import com.company.dao.ticket.TicketService;
 import com.company.entities.HallEntity;
-import com.company.entities.OrderEntity;
 import com.company.entities.SessionEntity;
 import com.company.entities.TicketEntity;
-import com.company.entities.current.CurrentUserEntity;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -38,7 +35,6 @@ public class UserPageController {
     @FXML
     private Label sumOrder;
 
-    private OrderService orderService = new OrderService();
     private HallService hallService = new HallService();
     private SessionService sessionService = new SessionService();
     private TicketService ticketService = new TicketService();

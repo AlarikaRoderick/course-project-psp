@@ -17,7 +17,7 @@ public class HibernateSessionFactory {
                 configuration.addAnnotatedClass(CinemaEntity.class);
                 configuration.addAnnotatedClass(FilmEntity.class);
                 configuration.addAnnotatedClass(HallEntity.class);
-                configuration.addAnnotatedClass(OrderEntity.class);
+                //configuration.addAnnotatedClass(OrderEntity.class);
                 configuration.addAnnotatedClass(SessionEntity.class);
                 configuration.addAnnotatedClass(UserEntity.class);
 

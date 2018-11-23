@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.company.dao.order.OrderService;
 import com.company.entities.UserEntity;
 import com.company.entities.current.CurrentUserEntity;
 import com.company.service.ChangeWindow;
@@ -36,7 +35,6 @@ public class FirstPageController {
     private Button signUpButton;
 
     private FirstPageService firstPageService = new FirstPageService();
-    private OrderService orderService = new OrderService();
     private ChangeWindow changeWindow = new ChangeWindow();
 
     public void signIn() {

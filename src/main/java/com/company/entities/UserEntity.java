@@ -32,31 +32,13 @@ public class UserEntity implements Serializable {
         this.userLogin = userLogin;
         this.userPassword = userPassword;
         this.isAdmin = isAdmin;
-        orderEntities = new ArrayList<>();
     }
 
     public UserEntity() {
     }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderEntity> orderEntities;
-
-    public void addOrder(OrderEntity order){
-        order.setUser(this);
-        orderEntities.add(order);
-    }
-
-    public void removeOrder(OrderEntity order){
-        orderEntities.remove(order);
-    }
-
-    public List<OrderEntity> getOrderEntities() {
-        return orderEntities;
-    }
-
-    public void setOrderEntities(List<OrderEntity> orderEntities) {
-        this.orderEntities = orderEntities;
-    }
+    private List<TicketEntity> ticketEntities;
 
     public int getId_user() {
         return id_user;

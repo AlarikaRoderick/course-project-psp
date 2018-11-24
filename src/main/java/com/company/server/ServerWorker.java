@@ -2,6 +2,7 @@ package com.company.server;
 
 import com.company.adapter.FilmAdapter;
 import com.company.dao.film.FilmService;
+import com.company.dao.session.SessionService;
 import com.company.dao.user.UserService;
 import com.company.entities.*;
 import com.company.server.service.SendObjectService;
@@ -30,6 +31,7 @@ public class ServerWorker {
         UserEntity user;
         UserService userService = new UserService();
         FilmService filmService = new FilmService();
+        SessionService sessionService = new SessionService();
         do {
             JSONObject message = this.sendObjectService.getObject();
             String action = (String) message.get("action");
@@ -99,6 +101,12 @@ public class ServerWorker {
                     user = (UserEntity) message.get("user");
                     userService.saveUser(user);
                     System.out.println("Пользователь добавлен");
+                    this.sendObjectService.sendMessage("successfulAdd");
+                    break;
+                case "addSession":
+                    session = (SessionEntity) message.get("session");
+                    sessionService.saveSession(session);
+                    System.out.println("Сеанс добавлен");
                     this.sendObjectService.sendMessage("successfulAdd");
                     break;
             }

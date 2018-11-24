@@ -1,5 +1,6 @@
 package com.company.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -7,11 +8,14 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import com.company.dao.film.FilmService;
 import com.company.dao.hall.HallService;
 import com.company.dao.session.SessionService;
+import com.company.entities.FilmEntity;
 import com.company.entities.HallEntity;
 import com.company.entities.SessionEntity;
 import com.company.entities.current.CurrentFilmEntity;
+import com.company.service.AdminFilmSessionPageService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -86,6 +90,8 @@ public class AdminFilmSessionPageController {
 
     private SessionService sessionService = new SessionService();
     private HallService hallService = new HallService();
+    private AdminFilmSessionPageService filmSessionPageService = new AdminFilmSessionPageService();
+    private FilmService filmService = new FilmService();
 
     @FXML
     void initialize() {
@@ -100,21 +106,25 @@ public class AdminFilmSessionPageController {
         sessionMinuteColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("sessionTimeMinute"));
         //hallNumberColumn.setCellValueFactory(new PropertyValueFactory<HallEntity, Integer>("hallName"));
         List<SessionEntity> sessions = sessionService.findAllSessions();
+        List<SessionEntity> currentSessions = new ArrayList<>();
+        for(SessionEntity session : sessions){
+            if (session.getFilm().getId_film() == CurrentFilmEntity.getFilm().getId_film()){
+                currentSessions.add(session);
+            }
+        }
         List<HallEntity> halls = hallService.findAllHalls();
         List<HallEntity> sessionHalls = new ArrayList<>();
         for (HallEntity hall : halls){
-            for (SessionEntity session : sessions){
+            for (SessionEntity session : currentSessions){
                 if (hall.getId_hall() == session.getHall().getId_hall()){
                     sessionHalls.add(hall);
-                    System.out.println("ggg");
                 }
             }
         }
 
-        ObservableList<SessionEntity> sessionEntities = FXCollections.observableList(sessions);
+        ObservableList<SessionEntity> sessionEntities = FXCollections.observableList(currentSessions);
         if(sessionEntities != null) {
             sessionTable.setItems(sessionEntities);
-
         }
         initClick();
     }
@@ -135,5 +145,34 @@ public class AdminFilmSessionPageController {
         });
     }
 
+    public void addSession(){
+        Date sessionDate = Date.valueOf(sessionDateField.getValue());
+        int sessionHour = Integer.valueOf(sessionHourField.getText());
+        int sessionMinute = Integer.valueOf(sessionMinuteField.getText());
+        int hallNumber = Integer.valueOf(sessionHallField.getText());
+        SessionEntity session = createSession(sessionDate, sessionHour, sessionMinute, hallNumber);
+        try {
+            String request = filmSessionPageService.addSession(session);
+            if (request.equals("successfulAdd")){
+                System.out.println("Сеанс добавлен");
+                initialize();
+            }
+        }catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    private SessionEntity createSession(Date sessionDate, int sessionHour, int sessionMinute, int hallNumber) {
+        SessionEntity session = new SessionEntity();
+        session.setSessionDate(sessionDate);
+        session.setSessionTimeHour(sessionHour);
+        session.setSessionTimeMinute(sessionMinute);
+        int filmId = CurrentFilmEntity.getFilm().getId_film();
+        FilmEntity film = filmService.findFilm(filmId);
+        session.setFilm(film);
+        HallEntity hall = hallService.findHall(hallNumber);
+        session.setHall(hall);
+        return session;
+    }
 
 }

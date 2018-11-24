@@ -1,12 +1,13 @@
 package com.company.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "cinema")
-public class CinemaEntity {
+public class CinemaEntity implements Serializable {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_cinema;
 

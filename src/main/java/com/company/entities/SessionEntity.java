@@ -1,12 +1,13 @@
 package com.company.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "session")
-public class SessionEntity {
+public class SessionEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

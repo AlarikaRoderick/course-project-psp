@@ -65,7 +65,7 @@
                 <Font name="Times New Roman" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="findUserOrderButton" layoutX="563.0" layoutY="464.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="208.0" text="Просмотреть заказы" textAlignment="CENTER">
+        <Button fx:id="findUserOrderButton" onAction="#goToUserOrder" layoutX="563.0" layoutY="464.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="208.0" text="Просмотреть заказы" textAlignment="CENTER">
             <font>
                 <Font name="Times New Roman" size="17.0" />
             </font>

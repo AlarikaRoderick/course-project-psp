@@ -33,6 +33,32 @@ public class SessionDAOImpl implements SessionDAO {
         return session;
     }
 
+    public List<SessionEntity> findSessionsByFilmName(String filmName){
+        DbHandler dbHandler = DbHandler.getInstance();
+        dbHandler.createConnection();
+        Connection connection = DbHandler.getInstance().getConnection();
+        List<SessionEntity> sessions = new ArrayList<>();
+        ResultSet resultSet = null;
+        String findSessions = "select id_session, session_date, session_time_hour, session_time_minute\n" +
+                "from session, film WHERE session.id_film_session=film.id_film and film.film_name='"+ filmName + "'";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(findSessions);
+            resultSet = preparedStatement.executeQuery(findSessions);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id_session");
+                Date sessionDate = resultSet.getDate("session_date");
+                int sessionHour = resultSet.getInt("session_time_hour");
+                int sessionMinute = resultSet.getInt("session_time_minute");
+                SessionEntity session = new SessionEntity(sessionDate, 0, 0, sessionHour, sessionMinute);
+                session.setId_session(id);
+                sessions.add(session);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sessions;
+    }
+
     private SessionEntity getSessionFromDB(ResultSet resultSet) throws SQLException {
         int id = resultSet.getInt(1);
         Date sessionDate = resultSet.getDate(2);

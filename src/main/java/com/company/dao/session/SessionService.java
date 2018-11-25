@@ -29,4 +29,8 @@ public class SessionService {
     public List<SessionEntity> findAllSessions(){
         return new SessionDAOImpl().findAll();
     }
+
+    public List<SessionEntity> findSessionsByFilmName(String filmName){
+        return new SessionDAOImpl().findSessionsByFilmName(filmName);
+    }
 }

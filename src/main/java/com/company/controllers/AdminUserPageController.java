@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.company.adapter.UserAdapter;
 import com.company.dao.user.UserService;
 import com.company.entities.UserEntity;
+import com.company.entities.current.CurrentUserEntity;
 import com.company.service.AdminUserPageService;
 import com.company.service.ChangeWindow;
 import javafx.collections.ObservableList;
@@ -166,6 +167,12 @@ public class AdminUserPageController {
 
     public void back() throws IOException{
         changeWindow.changeWindow(backButton, "/fxml/adminFirstPage.fxml");
+    }
+
+    public void goToUserOrder() throws IOException{
+        UserEntity user = createUser();
+        CurrentUserEntity.setUser(user);
+        changeWindow.changeWindow(findUserOrderButton, "/fxml/adminUserOrderPage.fxml");
     }
 
     private void clearFields() {

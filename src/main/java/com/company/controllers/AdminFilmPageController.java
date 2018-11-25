@@ -86,12 +86,7 @@ public class AdminFilmPageController {
         filmGenreColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmGenre"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmTime"));
         ageRatingColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmRating"));
-//        try {
-//            request = adminFilmPageService.getFilms();
-//            filmEntities = (ObservableList<FilmEntity>) request.get("filmList");
-//        }catch (IOException | ClassNotFoundException e){
-//            e.printStackTrace();
-//        }
+
         List<FilmEntity> films = filmService.findAllFilms();
         ObservableList<FilmEntity> filmEntities = filmAdapter.convertFromListToObservableList(films);
         filmTable.setItems(filmEntities);

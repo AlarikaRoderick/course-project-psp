@@ -10,6 +10,5 @@ public interface CinemaDAO {
     void saveCinema(CinemaEntity cinema);
     void updateCinema(CinemaEntity cinema);
     void deleteCinema(CinemaEntity cinema);
-    HallEntity findHallById(int id);
     List<CinemaEntity> findAll();
 }

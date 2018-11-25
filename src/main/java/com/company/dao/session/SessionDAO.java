@@ -10,6 +10,5 @@ public interface SessionDAO {
     void saveSession(SessionEntity session);
     void updateSession(SessionEntity session);
     void deleteSession(SessionEntity session);
-    TicketEntity findTicketById(int id);
     List<SessionEntity> findAll();
 }

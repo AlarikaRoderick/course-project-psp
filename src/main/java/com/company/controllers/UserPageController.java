@@ -41,18 +41,6 @@ public class UserPageController {
 
     @FXML
     void initialize() {
-        List<HallEntity> halls = hallService.findAllHalls();
-        System.out.println(halls.isEmpty());
-        List<SessionEntity> sessions = sessionService.findAllSessions();
-        System.out.println(sessions.isEmpty());
-        List<TicketEntity> tickets = ticketService.findAllTickets();
-        System.out.println(tickets.isEmpty());
-        //List<OrderEntity> orders = orderService.findAllOrders();
-        //System.out.println(orders.isEmpty());
-        /*for (OrderEntity order : orders){
-            if (order.getUser().getId_user() == CurrentUserEntity.getUser().getId_user()){
-                sumOrder.setText(String.valueOf(order.getOrderSum()));
-            }
-        }*/
+
     }
 }

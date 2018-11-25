@@ -10,22 +10,22 @@ public class TicketService {
     public TicketService(){}
 
     public TicketEntity findTicket(int id){
-        return ticketDAO.findTicketById(id);
+        return new TicketDAOImpl().findTicketById(id);
     }
 
     public void saveTicket(TicketEntity ticket){
-        ticketDAO.saveTicket(ticket);
+        new TicketDAOImpl().saveTicket(ticket);
     }
 
     public void updateTicket(TicketEntity ticket){
-        ticketDAO.updateTicket(ticket);
+        new TicketDAOImpl().updateTicket(ticket);
     }
 
     public void deleteTicket(TicketEntity ticket){
-        ticketDAO.deleteTicket(ticket);
+        new TicketDAOImpl().deleteTicket(ticket);
     }
 
     public List<TicketEntity> findAllTickets(){
-        return ticketDAO.findAll();
+        return new TicketDAOImpl().findAll();
     }
 }

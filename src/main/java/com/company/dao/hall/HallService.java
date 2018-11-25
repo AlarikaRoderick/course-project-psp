@@ -12,26 +12,22 @@ public class HallService {
     public HallService(){}
 
     public HallEntity findHall(int id){
-        return hallDAO.findHallById(id);
+        return new HallDAOImpl().findHallById(id);
     }
 
     public void saveHall(HallEntity hall){
-        hallDAO.saveHall(hall);
+        new HallDAOImpl().saveHall(hall);
     }
 
     public void updateHall(HallEntity hall){
-        hallDAO.updateHall(hall);
+        new HallDAOImpl().updateHall(hall);
     }
 
     public void deleteHall(HallEntity hall){
-        hallDAO.deleteHall(hall);
-    }
-
-    public SessionEntity findTicketById(int id){
-        return hallDAO.findSessionById(id);
+        new HallDAOImpl().deleteHall(hall);
     }
 
     public List<HallEntity> findAllHalls(){
-        return hallDAO.findAll();
+        return new HallDAOImpl().findAll();
     }
 }

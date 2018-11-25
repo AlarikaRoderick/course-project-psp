@@ -3,6 +3,7 @@ package com.company.server;
 import com.company.adapter.FilmAdapter;
 import com.company.dao.film.FilmService;
 import com.company.dao.session.SessionService;
+import com.company.dao.ticket.TicketService;
 import com.company.dao.user.UserService;
 import com.company.entities.*;
 import com.company.server.service.SendObjectService;
@@ -32,6 +33,7 @@ public class ServerWorker {
         UserService userService = new UserService();
         FilmService filmService = new FilmService();
         SessionService sessionService = new SessionService();
+        TicketService ticketService = new TicketService();
         do {
             JSONObject message = this.sendObjectService.getObject();
             String action = (String) message.get("action");
@@ -108,6 +110,30 @@ public class ServerWorker {
                     sessionService.saveSession(session);
                     System.out.println("Сеанс добавлен");
                     this.sendObjectService.sendMessage("successfulAdd");
+                    break;
+                case "updateSession":
+                    session = (SessionEntity) message.get("session");
+                    sessionService.updateSession(session);
+                    System.out.println("Сеанс обновлен");
+                    this.sendObjectService.sendMessage("successfulUpdate");
+                    break;
+                case "deleteSession":
+                    session = (SessionEntity) message.get("session");
+                    sessionService.deleteSession(session);
+                    System.out.println("Сеанс удален");
+                    this.sendObjectService.sendMessage("successfulDelete");
+                    break;
+                case "addTicket":
+                    ticket = (TicketEntity) message.get("ticket");
+                    ticketService.saveTicket(ticket);
+                    System.out.println("Билет добавлен");
+                    this.sendObjectService.sendMessage("successfulAdd");
+                    break;
+                case "updateTicket":
+                    ticket = (TicketEntity) message.get("ticket");
+                    ticketService.updateTicket(ticket);
+                    System.out.println("Билет обновлен");
+                    this.sendObjectService.sendMessage("successfulUpdate");
                     break;
             }
         }while (repeat);

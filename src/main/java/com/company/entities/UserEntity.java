@@ -1,28 +1,14 @@
 package com.company.entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "user")
 public class UserEntity implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_user;
-
-    @Column(name = "user_name")
     private String userName;
-    @Column(name = "user_surname")
     private String userSurname;
-    @Column(name = "user_age")
     private int userAge;
-    @Column(name = "user_login")
     private String userLogin;
-    @Column(name = "user_password")
     private String userPassword;
-    @Column(name = "isAdmin")
     private boolean isAdmin;
 
     public UserEntity(String userName, String userSurname, int userAge, String userLogin, String userPassword, boolean isAdmin) {
@@ -37,8 +23,6 @@ public class UserEntity implements Serializable {
     public UserEntity() {
     }
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TicketEntity> ticketEntities;
 
     public int getId_user() {
         return id_user;

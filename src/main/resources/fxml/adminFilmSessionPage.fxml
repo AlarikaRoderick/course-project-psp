@@ -82,9 +82,10 @@
       <TextField fx:id="sessionMinuteField" layoutX="532.0" layoutY="214.0" prefHeight="27.0" prefWidth="68.0" />
       <TextField fx:id="sessionHallField" layoutX="458.0" layoutY="251.0" prefHeight="27.0" prefWidth="68.0" />
       <DatePicker fx:id="sessionDateField" layoutX="458.0" layoutY="177.0" prefHeight="27.0" prefWidth="140.0" />
-      <Button fx:id="addSessionButton" onAction="#addSession" layoutX="402.0" layoutY="298.0" mnemonicParsing="false" text="Добавить" />
-      <Button fx:id="updateSessionButton" layoutX="510.0" layoutY="298.0" mnemonicParsing="false" text="Обновить" />
-      <Button fx:id="deleteSessionButton" layoutX="615.0" layoutY="298.0" mnemonicParsing="false" text="Удалить" />
+      <Button fx:id="addSessionButton" layoutX="370.0" layoutY="345.0" mnemonicParsing="false" onAction="#addSession" text="Добавить новый сеанс" />
+      <Button fx:id="updateSessionButton" layoutX="402.0" layoutY="298.0" mnemonicParsing="false" onAction="#updateSession" text="Обновить" />
+      <Button fx:id="deleteSessionButton" layoutX="552.0" layoutY="298.0" mnemonicParsing="false" onAction="#deleteSession" text="Удалить" />
       <Button fx:id="backButton" layoutX="35.0" layoutY="339.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
+      <Button fx:id="ticketSessionButton" onAction="#goToTicketPage" layoutX="560.0" layoutY="345.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="Билеты" />
    </children>
 </AnchorPane>

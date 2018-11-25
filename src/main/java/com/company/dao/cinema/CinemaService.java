@@ -11,26 +11,22 @@ public class CinemaService {
     public CinemaService(){}
 
     public CinemaEntity findCinema(int id){
-        return cinemaDAO.findCinemaById(id);
+        return new CinemaDAOImpl().findCinemaById(id);
     }
 
     public void saveCinema(CinemaEntity cinemaEntity){
-        cinemaDAO.saveCinema(cinemaEntity);
+        new CinemaDAOImpl().saveCinema(cinemaEntity);
     }
 
     public void updateCinema(CinemaEntity cinemaEntity){
-        cinemaDAO.updateCinema(cinemaEntity);
+        new CinemaDAOImpl().updateCinema(cinemaEntity);
     }
 
     public void deleteCinema(CinemaEntity cinemaEntity){
-        cinemaDAO.deleteCinema(cinemaEntity);
-    }
-
-    public HallEntity findHallById(int id){
-        return cinemaDAO.findHallById(id);
+        new CinemaDAOImpl().deleteCinema(cinemaEntity);
     }
 
     public List<CinemaEntity> findAllCinema(){
-        return cinemaDAO.findAll();
+        return new CinemaDAOImpl().findAll();
     }
 }

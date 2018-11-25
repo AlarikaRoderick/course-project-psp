@@ -10,22 +10,22 @@ public class UserService {
     public UserService(){}
 
     public UserEntity findUser(int id){
-        return userDAO.findUserById(id);
+        return new UserDAOImpl().findUserById(id);
     }
 
     public void saveUser(UserEntity user){
-        userDAO.saveUser(user);
+        new UserDAOImpl().saveUser(user);
     }
 
     public void updateUser(UserEntity user){
-        userDAO.updateUser(user);
+        new UserDAOImpl().updateUser(user);
     }
 
     public void deleteUser(UserEntity user){
-        userDAO.deleteUser(user);
+        new UserDAOImpl().deleteUser(user);
     }
 
     public List<UserEntity> findAllUsers() {
-        return userDAO.findAll();
+        return new UserDAOImpl().findAll();
     }
 }

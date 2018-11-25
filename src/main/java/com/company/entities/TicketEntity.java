@@ -1,32 +1,21 @@
 package com.company.entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "ticket")
 public class TicketEntity implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id_ticket;
-
-    @Column(name = "ticket_price")
     private int ticketPrice;
+    private int idSessionTicket;
+    private int idUserTicket;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_session_ticket")
-    private SessionEntity session;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user_ticket")
-    private UserEntity user;
-
-    public SessionEntity getSession() {
-        return session;
+    public TicketEntity() {
     }
 
-    public void setSession(SessionEntity session) {
-        this.session = session;
+    public TicketEntity(int ticketPrice, int idSessionTicket, int idUserTicket) {
+        this.ticketPrice = ticketPrice;
+        this.idSessionTicket = idSessionTicket;
+        this.idUserTicket = idUserTicket;
     }
 
     public int getId_ticket() {
@@ -43,6 +32,22 @@ public class TicketEntity implements Serializable {
 
     public void setTicketPrice(int ticketPrice) {
         this.ticketPrice = ticketPrice;
+    }
+
+    public int getIdSessionTicket() {
+        return idSessionTicket;
+    }
+
+    public void setIdSessionTicket(int idSessionTicket) {
+        this.idSessionTicket = idSessionTicket;
+    }
+
+    public int getIdUserTicket() {
+        return idUserTicket;
+    }
+
+    public void setIdUserTicket(int idUserTicket) {
+        this.idUserTicket = idUserTicket;
     }
 
     @Override

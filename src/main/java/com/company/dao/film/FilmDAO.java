@@ -10,6 +10,5 @@ public interface FilmDAO {
     void saveFilm(FilmEntity film);
     void updateFilm(FilmEntity film);
     void deleteFilm(FilmEntity film);
-    SessionEntity findSessionById(int id);
     List<FilmEntity> findAll();
 }

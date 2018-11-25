@@ -11,26 +11,22 @@ public class SessionService {
     public SessionService(){}
 
     public SessionEntity findSession(int id){
-        return sessionDAO.findSessionById(id);
+        return new SessionDAOImpl().findSessionById(id);
     }
 
     public void saveSession(SessionEntity session){
-        sessionDAO.saveSession(session);
+        new SessionDAOImpl().saveSession(session);
     }
 
     public void updateSession(SessionEntity session){
-        sessionDAO.updateSession(session);
+        new SessionDAOImpl().updateSession(session);
     }
 
     public void deleteSession(SessionEntity session){
-        sessionDAO.deleteSession(session);
-    }
-
-    public TicketEntity findTicketById(int id){
-        return sessionDAO.findTicketById(id);
+        new SessionDAOImpl().deleteSession(session);
     }
 
     public List<SessionEntity> findAllSessions(){
-        return sessionDAO.findAll();
+        return new SessionDAOImpl().findAll();
     }
 }

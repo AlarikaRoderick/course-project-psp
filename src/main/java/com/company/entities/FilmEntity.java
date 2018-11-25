@@ -1,32 +1,14 @@
 package com.company.entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "film")
 public class FilmEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_film;
-
-    @Column(name = "film_name")
     private String filmName;
-
-    @Column(name = "film_genre")
     private String filmGenre;
-
-    @Column(name = "film_time")
     private String filmTime;
-
-    @Column(name = "film_rating")
     private String filmRating;
-
-    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SessionEntity> sessionEntities;
 
     public FilmEntity(){}
 
@@ -35,24 +17,6 @@ public class FilmEntity implements Serializable {
         this.filmGenre = filmGenre;
         this.filmTime = filmTime;
         this.filmRating = filmRating;
-        sessionEntities = new ArrayList<>();
-    }
-
-    public void addSession(SessionEntity session){
-        session.setFilm(this);
-        sessionEntities.add(session);
-    }
-
-    public void removeSession(SessionEntity session){
-        sessionEntities.remove(session);
-    }
-
-    public List<SessionEntity> getSessionEntities() {
-        return sessionEntities;
-    }
-
-    public void setSessionEntities(List<SessionEntity> sessionEntities) {
-        this.sessionEntities = sessionEntities;
     }
 
     public int getId_film() {

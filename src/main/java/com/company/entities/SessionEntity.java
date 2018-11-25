@@ -1,71 +1,26 @@
 package com.company.entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 
-@Entity
-@Table(name = "session")
 public class SessionEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_session;
-
-    @Column(name = "session_date")
     private Date sessionDate;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_film_session")
-    private FilmEntity film;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_hall_session")
-    private HallEntity hall;
-
-    @Column(name = "session_time_hour")
+    private int idFilmSession;
+    private int idHallSession;
     private int sessionTimeHour;
-
-    @Column(name = "session_time_minute")
     private int sessionTimeMinute;
 
-    @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TicketEntity> ticketEntities;
-
-    public void addTicket(TicketEntity ticket){
-        ticket.setSession(this);
-        ticketEntities.add(ticket);
+    public SessionEntity() {
     }
 
-    public void removeTicket(TicketEntity ticket){
-        ticketEntities.remove(ticket);
-    }
-
-    public List<TicketEntity> getTicketEntities() {
-        return ticketEntities;
-    }
-
-    public void setTicketEntities(List<TicketEntity> ticketEntities) {
-        this.ticketEntities = ticketEntities;
-    }
-
-    public SessionEntity(){}
-
-    public HallEntity getHall() {
-        return hall;
-    }
-
-    public void setHall(HallEntity hall) {
-        this.hall = hall;
-    }
-
-    public FilmEntity getFilm() {
-        return film;
-    }
-
-    public void setFilm(FilmEntity film) {
-        this.film = film;
+    public SessionEntity(Date sessionDate, int idFilmSession, int idHallSession, int sessionTimeHour, int sessionTimeMinute) {
+        this.sessionDate = sessionDate;
+        this.idFilmSession = idFilmSession;
+        this.idHallSession = idHallSession;
+        this.sessionTimeHour = sessionTimeHour;
+        this.sessionTimeMinute = sessionTimeMinute;
     }
 
     public int getId_session() {
@@ -82,6 +37,22 @@ public class SessionEntity implements Serializable {
 
     public void setSessionDate(Date sessionDate) {
         this.sessionDate = sessionDate;
+    }
+
+    public int getIdFilmSession() {
+        return idFilmSession;
+    }
+
+    public void setIdFilmSession(int idFilmSession) {
+        this.idFilmSession = idFilmSession;
+    }
+
+    public int getIdHallSession() {
+        return idHallSession;
+    }
+
+    public void setIdHallSession(int idHallSession) {
+        this.idHallSession = idHallSession;
     }
 
     public int getSessionTimeHour() {

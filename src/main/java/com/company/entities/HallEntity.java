@@ -1,60 +1,22 @@
 package com.company.entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
-@Entity
-@Table(name = "hall")
 public class HallEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_hall;
-
-    @Column(name = "hall_name")
     private String hallName;
-
-    @Column(name = "hall_rows")
     private int hallRows;
-
-    @Column(name = "hall_places")
     private int hallPlaces;
-
-    @OneToMany(mappedBy = "hall", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SessionEntity> sessionEntityList;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cinema_hall")
-    private CinemaEntity cinema;
+    private int idCinemaHall;
 
     public HallEntity(){}
 
-    public HallEntity(String hallName, int hallRows, int hallPlaces) {
+    public HallEntity(String hallName, int hallRows, int hallPlaces, int idCinemaHall) {
         this.hallName = hallName;
         this.hallRows = hallRows;
         this.hallPlaces = hallPlaces;
-    }
-
-    public CinemaEntity getCinema(){ return cinema; }
-
-    public void setCinema(CinemaEntity cinema){ this.cinema = cinema; }
-
-    public void addSession(SessionEntity session){
-        session.setHall(this);
-        sessionEntityList.add(session);
-    }
-
-    public void removeSession(SessionEntity session){
-        sessionEntityList.remove(session);
-    }
-
-    public List<SessionEntity> getSessionEntityList() {
-        return sessionEntityList;
-    }
-
-    public void setSessionEntityList(List<SessionEntity> sessionEntityList) {
-        this.sessionEntityList = sessionEntityList;
+        this.idCinemaHall = idCinemaHall;
     }
 
     public int getId_hall() {
@@ -87,6 +49,14 @@ public class HallEntity implements Serializable {
 
     public void setHallPlaces(int hallPlaces) {
         this.hallPlaces = hallPlaces;
+    }
+
+    public int getIdCinemaHall() {
+        return idCinemaHall;
+    }
+
+    public void setIdCinemaHall(int idCinemaHall) {
+        this.idCinemaHall = idCinemaHall;
     }
 
     @Override

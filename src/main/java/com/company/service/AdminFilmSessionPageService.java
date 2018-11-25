@@ -6,9 +6,17 @@ import org.json.simple.JSONObject;
 import java.io.IOException;
 
 public class AdminFilmSessionPageService {
-    public String addSession(SessionEntity session) throws IOException, ClassNotFoundException {
+    public String updateSession(SessionEntity session) throws IOException, ClassNotFoundException {
         JSONObject object = new JSONObject();
-        object.put("action", "addSession");
+        object.put("action", "updateSession");
+        object.put("session", session);
+        SendObjectService.sendObject(object);
+        return SendObjectService.getMessage();
+    }
+
+    public String deleteSession(SessionEntity session) throws IOException, ClassNotFoundException{
+        JSONObject object = new JSONObject();
+        object.put("action", "deleteSession");
         object.put("session", session);
         SendObjectService.sendObject(object);
         return SendObjectService.getMessage();

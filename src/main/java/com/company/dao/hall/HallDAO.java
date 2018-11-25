@@ -10,6 +10,5 @@ public interface HallDAO {
     void saveHall(HallEntity hall);
     void updateHall(HallEntity hall);
     void deleteHall(HallEntity hall);
-    SessionEntity findSessionById(int id);
     List<HallEntity> findAll();
 }

@@ -5,26 +5,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "cinema")
 public class CinemaEntity implements Serializable {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_cinema;
-
-    @Column(name="cinema_name")
     private String cinemaName;
-
-    @Column(name = "cinema_address")
     private String cinemaAddress;
-
-    @Column(name = "cinema_underground")
     private String cinemaUnderground;
-
-    @Column(name = "cinema_phone")
     private String cinemaPhone;
-
-    @OneToMany(mappedBy = "cinema", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<HallEntity> hallEntities;
 
     public CinemaEntity(){}
 
@@ -33,24 +19,6 @@ public class CinemaEntity implements Serializable {
         this.cinemaAddress = cinemaAddress;
         this.cinemaUnderground = cinemaUnderground;
         this.cinemaPhone = cinemaPhone;
-        hallEntities = new ArrayList<>();
-    }
-
-    public void addHall(HallEntity hall){
-        hall.setCinema(this);
-        hallEntities.add(hall);
-    }
-
-    public void removeHall(HallEntity hall){
-        hallEntities.remove(hall);
-    }
-
-    public List<HallEntity> getHallEntities() {
-        return hallEntities;
-    }
-
-    public void setHallEntities(List<HallEntity> hallEntities) {
-        this.hallEntities = hallEntities;
     }
 
     public int getId_cinema() {

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.AdminUserOrderController">
+<AnchorPane prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.AdminUserOrderController">
     <children>
         <Label layoutX="384.0" layoutY="14.0" text="Информация о пользователе">
             <font>
@@ -34,7 +34,7 @@
                 <Font name="Times New Roman" size="17.0" />
             </font>
         </Label>
-        <TableView fx:id="sessionTable" layoutX="9.0" layoutY="8.0" prefHeight="527.0" prefWidth="357.0">
+        <TableView fx:id="sessionTable" layoutX="9.0" layoutY="8.0" prefHeight="572.0" prefWidth="357.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="68.0" text="ID билета" />
                 <TableColumn fx:id="sessionDateColumn" prefWidth="97.0" text="Дата сеанса" />
@@ -67,15 +67,16 @@
                 <Font name="Times New Roman" size="17.0" />
             </font>
         </Label>
-        <Button fx:id="findSessionButton" onAction="#findSessions" layoutX="475.0" layoutY="182.0" mnemonicParsing="false" text="Найти сеансы" />
-        <Button fx:id="addOrderButton" layoutX="493.0" layoutY="549.0" mnemonicParsing="false" text="Добавить" />
-        <Button fx:id="deleteOrderButton" layoutX="298.0" layoutY="549.0" mnemonicParsing="false" text="Удалить" />
-        <Button fx:id="backButton" layoutX="25.0" layoutY="549.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
+        <Button fx:id="findSessionButton" layoutX="475.0" layoutY="182.0" mnemonicParsing="false" onAction="#findSessions" text="Найти сеансы" />
+        <Button fx:id="addOrderButton" layoutX="488.0" layoutY="590.0" mnemonicParsing="false" text="Добавить" />
+        <Button fx:id="deleteOrderButton" layoutX="298.0" layoutY="590.0" mnemonicParsing="false" text="Удалить" />
+        <Button fx:id="backButton" layoutX="28.0" layoutY="591.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
       <ComboBox fx:id="filmNameComboBox" layoutX="453.0" layoutY="148.0" prefWidth="150.0" />
-      <TableView fx:id="sessionForCurrentFilmTable" layoutX="426.0" layoutY="237.0" prefHeight="133.0" prefWidth="219.0">
+      <TableView fx:id="sessionForCurrentFilmTable" layoutX="386.0" layoutY="237.0" prefHeight="133.0" prefWidth="294.0">
         <columns>
-          <TableColumn fx:id="dateColumn" prefWidth="97.0" text="Дата сеанса" />
-          <TableColumn prefWidth="207.0" text="Время">
+            <TableColumn fx:id="idSessionColumn" prefWidth="54.86126708984375" text="ID" />
+          <TableColumn fx:id="dateColumn" prefWidth="120.43597412109375" text="Дата сеанса" />
+          <TableColumn prefWidth="108.56402587890625" text="Время">
                <columns>
                   <TableColumn fx:id="hourColumn" prefWidth="60.0" text="Часы" />
                   <TableColumn fx:id="minuteColumn" prefWidth="58.0" text="Минуты" />
@@ -83,16 +84,19 @@
             </TableColumn>
         </columns>
       </TableView>
-      <TableView fx:id="ticketColumn" layoutX="426.0" layoutY="402.0" prefHeight="133.0" prefWidth="219.0">
+      <TableView fx:id="ticketColumn" layoutX="390.0" layoutY="441.0" prefHeight="133.0" prefWidth="294.0">
          <columns>
-            <TableColumn fx:id="idTicketColumn" prefWidth="115.52093505859375" text="ID билета" />
-            <TableColumn fx:id="priceColumn" prefWidth="102.47906494140625" text="Цена" />
+            <TableColumn fx:id="idTicketColumn" prefWidth="87.0" text="ID билета" />
+            <TableColumn fx:id="priceColumn" prefWidth="66.0" text="Цена" />
+            <TableColumn fx:id="placeRowColumn" prefWidth="71.0" text="Ряд" />
+            <TableColumn fx:id="placeNumberColumn" prefWidth="69.0" text="Место" />
          </columns>
       </TableView>
-      <Label layoutX="508.0" layoutY="382.0" text="Билеты">
+      <Label layoutX="506.0" layoutY="412.0" text="Билеты">
          <font>
             <Font name="Times New Roman" size="17.0" />
          </font>
       </Label>
+      <Button fx:id="findTicketsButton" layoutX="475.0" layoutY="378.0" mnemonicParsing="false" onAction="#findTickets" text="Найти билеты" />
     </children>
 </AnchorPane>

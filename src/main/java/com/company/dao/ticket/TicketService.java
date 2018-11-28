@@ -28,4 +28,8 @@ public class TicketService {
     public List<TicketEntity> findAllTickets(){
         return new TicketDAOImpl().findAll();
     }
+
+    public List<TicketEntity> findTicketsBySessionId(int idSession){
+        return new TicketDAOImpl().findTicketBySessionId(idSession);
+    }
 }

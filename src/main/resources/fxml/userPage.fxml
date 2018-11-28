@@ -2,24 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.UserPageController">
+<AnchorPane prefHeight="274.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.UserPageController">
    <children>
-      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="314.0" layoutY="31.0" text="Страница пользователя">
+      <Label layoutX="200.0" layoutY="23.0" text="Страница пользователя">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="affiche" layoutX="314.0" layoutY="89.0" mnemonicParsing="false" text="Афиша" />
-      <Button fx:id="checkOrder" layoutX="316.0" layoutY="130.0" mnemonicParsing="false" text="Просмотреть заказ" />
-      <Label fx:id="sumOrder" layoutX="314.0" layoutY="189.0" text="llf">
+      <Button fx:id="makeOrderButton" onAction="#makeOrder" layoutX="314.0" layoutY="66.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="200.0" text="Сделать заказ">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="checkOrderButton" onAction="#checkOrder" layoutX="314.0" layoutY="146.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="200.0" text="Просмотреть заказ">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Label layoutX="14.0" layoutY="74.0" text="Фамилия">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Label>
+      <Label layoutX="14.0" layoutY="105.0" text="Имя">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="135.0" text="Возраст">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="166.0" text="Логин">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="surnameLabel" layoutX="128.0" layoutY="74.0" text="Фамилия">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="128.0" layoutY="105.0" text="Имя">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="ageLabel" layoutX="128.0" layoutY="135.0" text="Возраст">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="loginLabel" layoutX="128.0" layoutY="166.0" text="Логин">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="editUserButton" layoutX="27.0" layoutY="209.0" mnemonicParsing="false" onAction="#editUser" prefHeight="27.0" prefWidth="200.0" text="Отредактировать данные" />
+      <Button fx:id="exitButton" onAction="#exit" layoutX="43.0" layoutY="21.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Выход" />
    </children>
 </AnchorPane>

@@ -9,8 +9,8 @@ public class UserService {
 
     public UserService(){}
 
-    public UserEntity findUser(int id){
-        return new UserDAOImpl().findUserById(id);
+    public UserEntity findUser(String login, String password){
+        return new UserDAOImpl().findUserById(login, password);
     }
 
     public void saveUser(UserEntity user){

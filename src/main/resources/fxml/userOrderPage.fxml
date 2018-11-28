@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="376.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controllers.UserOrderPageController">
+    <children>
+        <TableView fx:id="userOrderTable" layoutX="9.0" layoutY="8.0" prefHeight="264.0" prefWidth="678.0">
+            <columns>
+                <TableColumn fx:id="idTicketColumn" prefWidth="68.0" text="ID билета" />
+                <TableColumn fx:id="sessionDateColumn" prefWidth="97.0" text="Дата сеанса" />
+            <TableColumn fx:id="placeRowColumn" prefWidth="97.0" text="Ряд" />
+            <TableColumn fx:id="placeNumberColumn" prefWidth="97.0" text="Место" />
+                <TableColumn prefWidth="132.0" text="Время">
+                    <columns>
+                        <TableColumn fx:id="sessionHourColumn" prefWidth="57.0" text="Часы" />
+                        <TableColumn fx:id="sessionMinuteColumn" prefWidth="61.0" text="Минуты" />
+                    </columns>
+                </TableColumn>
+                <TableColumn fx:id="filmNameColumn" prefWidth="200.00003051757812" text="Фильм" />
+            </columns>
+        </TableView>
+        <Label layoutX="384.0" layoutY="217.0">
+            <font>
+                <Font name="Times New Roman" size="17.0" />
+            </font>
+        </Label>
+        <Button fx:id="deleteOrderButton" onAction="#deleteOrder" layoutX="433.0" layoutY="312.0" mnemonicParsing="false" text="Отменить выбранный заказ" />
+        <Button fx:id="backButton" onAction="#back" layoutX="94.0" layoutY="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
+    </children>
+</AnchorPane>

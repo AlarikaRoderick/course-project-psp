@@ -8,13 +8,17 @@ public class Order {
     private int sessionHour;
     private int sessionMinute;
     private String filmName;
+    private int placeRow;
+    private int placeNumber;
 
-    public Order(int idTicket, Date sessionDate, int sessionHour, int sessionMinute, String filmName) {
+    public Order(int idTicket, Date sessionDate, int sessionHour, int sessionMinute, String filmName, int placeRow, int placeNumber) {
         this.idTicket = idTicket;
         this.sessionDate = sessionDate;
         this.sessionHour = sessionHour;
         this.sessionMinute = sessionMinute;
         this.filmName = filmName;
+        this.placeRow = placeRow;
+        this.placeNumber = placeNumber;
     }
 
     public int getIdTicket() {
@@ -55,5 +59,21 @@ public class Order {
 
     public void setFilmName(String filmName) {
         this.filmName = filmName;
+    }
+
+    public int getPlaceRow() {
+        return placeRow;
+    }
+
+    public void setPlaceRow(int placeRow) {
+        this.placeRow = placeRow;
+    }
+
+    public int getPlaceNumber() {
+        return placeNumber;
+    }
+
+    public void setPlaceNumber(int placeNumber) {
+        this.placeNumber = placeNumber;
     }
 }

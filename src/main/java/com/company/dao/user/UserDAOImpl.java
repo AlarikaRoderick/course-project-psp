@@ -10,11 +10,11 @@ public class UserDAOImpl implements UserDAO {
     //private Connection connection = DbHandler.getInstance().getConnection();
 
     @Override
-    public UserEntity findUserById(int id) {
+    public UserEntity findUserById(String login, String password) {
         DbHandler dbHandler = DbHandler.getInstance();
         dbHandler.createConnection();
         Connection connection = DbHandler.getInstance().getConnection();
-        String findUser = "SELECT * FROM user WHERE id_user=" + id;
+        String findUser = "SELECT * FROM user WHERE user_login='" + login + "' and user_password='" + password +"'";
         ResultSet resultSet = null;
         UserEntity user = null;
         try{

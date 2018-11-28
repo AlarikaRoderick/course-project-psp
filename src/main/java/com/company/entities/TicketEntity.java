@@ -8,14 +8,18 @@ public class TicketEntity implements Serializable {
     private int ticketPrice;
     private int idSessionTicket;
     private int idUserTicket;
+    private int placeNumber;
+    private int placeRow;
 
     public TicketEntity() {
     }
 
-    public TicketEntity(int ticketPrice, int idSessionTicket, int idUserTicket) {
+    public TicketEntity(int ticketPrice, int idSessionTicket, int idUserTicket, int placeNumber, int placeRow) {
         this.ticketPrice = ticketPrice;
         this.idSessionTicket = idSessionTicket;
         this.idUserTicket = idUserTicket;
+        this.placeNumber = placeNumber;
+        this.placeRow = placeRow;
     }
 
     public int getId_ticket() {
@@ -48,6 +52,22 @@ public class TicketEntity implements Serializable {
 
     public void setIdUserTicket(int idUserTicket) {
         this.idUserTicket = idUserTicket;
+    }
+
+    public int getPlaceNumber() {
+        return placeNumber;
+    }
+
+    public void setPlaceNumber(int placeNumber) {
+        this.placeNumber = placeNumber;
+    }
+
+    public int getPlaceRow() {
+        return placeRow;
+    }
+
+    public void setPlaceRow(int placeRow) {
+        this.placeRow = placeRow;
     }
 
     @Override

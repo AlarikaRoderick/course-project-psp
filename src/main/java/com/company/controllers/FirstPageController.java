@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.company.dao.user.UserService;
 import com.company.entities.UserEntity;
 import com.company.entities.current.CurrentUserEntity;
 import com.company.service.ChangeWindow;
@@ -36,6 +37,7 @@ public class FirstPageController {
 
     private FirstPageService firstPageService = new FirstPageService();
     private ChangeWindow changeWindow = new ChangeWindow();
+    private UserService userService = new UserService();
 
     public void signIn() {
         UserEntity user = createUser();
@@ -47,6 +49,9 @@ public class FirstPageController {
             switch (request){
                 case "suchUserExist":
                     System.out.println("Вход выполнен успешно");
+                    String login = loginInputField.getText().trim();
+                    String password = passwordInputField.getText().trim();
+                    user = userService.findUser(login, password);
                     CurrentUserEntity.setUser(user);
                     changeWindow.changeWindow(enterButton, "/fxml/userPage.fxml");
                     break;
@@ -54,10 +59,19 @@ public class FirstPageController {
                     System.out.println("Вы вошли как администратор");
                     changeWindow.changeWindow(enterButton, "/fxml/adminFirstPage.fxml");
                     break;
+                case "noSuchUser":
+                    System.out.println("Такого пользователя нет в бд");
+                    clearFields();
+                    break;
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private void clearFields() {
+        loginInputField.clear();
+        passwordInputField.clear();
     }
 
     public void signUp() {

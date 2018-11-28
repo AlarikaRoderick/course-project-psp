@@ -10,4 +10,8 @@ public class OrderService {
     public List<Order> findAllOrders(int idUser){
         return orderDAO.createOrder(idUser);
     }
+
+    public void deleteOrder(int id){
+        orderDAO.deleteOrder(id);
+    }
 }

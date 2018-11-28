@@ -39,6 +39,7 @@ public class ServerWorker {
             String action = (String) message.get("action");
             switch (action){
                 case "signIn":
+                    boolean isUser = false;
                     user = (UserEntity) message.get("user");
                     List<UserEntity> allUsers = userService.findAllUsers();
                     for (UserEntity userEntity: allUsers) {
@@ -49,10 +50,18 @@ public class ServerWorker {
                             if (userEntity.isAdmin()){
                                 System.out.println("Администратор");
                                 this.sendObjectService.sendMessage("suchUserAdmin");
+                                isUser = true;
+                                break;
                             }
-                            else
+                            else {
                                 this.sendObjectService.sendMessage("suchUserExist");
+                                isUser = true;
+                                break;
+                            }
                         }
+                    }
+                    if (!isUser){
+                        this.sendObjectService.sendMessage("noSuchUser");
                     }
                     break;
                 case "signUp":
@@ -134,6 +143,12 @@ public class ServerWorker {
                     ticketService.updateTicket(ticket);
                     System.out.println("Билет обновлен");
                     this.sendObjectService.sendMessage("successfulUpdate");
+                    break;
+                case "editUser":
+                    user = (UserEntity) message.get("user");
+                    userService.updateUser(user);
+                    System.out.println("Пользователь обновлен");
+                    this.sendObjectService.sendMessage("successfulEdit");
                     break;
             }
         }while (repeat);

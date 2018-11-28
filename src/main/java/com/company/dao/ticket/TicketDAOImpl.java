@@ -19,7 +19,7 @@ public class TicketDAOImpl implements TicketDAO {
         dbHandler.createConnection();
         Connection connection = DbHandler.getInstance().getConnection();
         String findTicket = "SELECT * FROM ticket WHERE id_ticket=" + id;
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         TicketEntity ticket = null;
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(findTicket);
@@ -39,15 +39,17 @@ public class TicketDAOImpl implements TicketDAO {
         int ticketPrice = resultSet.getInt(2);
         int idSessionTicket = resultSet.getInt(3);
         int idUserTicket = resultSet.getInt(4);
-        TicketEntity ticket = new TicketEntity(ticketPrice, idSessionTicket, idUserTicket);
+        int placeNumber = resultSet.getInt(5);
+        int placeRow = resultSet.getInt(6);
+        TicketEntity ticket = new TicketEntity(ticketPrice, idSessionTicket, idUserTicket, placeNumber, placeRow);
         ticket.setId_ticket(id);
         return ticket;
     }
 
     @Override
     public void saveTicket(TicketEntity ticket) {
-        String saveUser = "INSERT INTO ticket (ticket_price, id_session_ticket, id_user_ticket)"
-                + "VALUES(?,?,?)";
+        String saveUser = "INSERT INTO ticket (ticket_price, id_session_ticket, id_user_ticket, place_number, place_row)"
+                + "VALUES(?,?,?,?,?)";
         try{
             setTicketInfo(ticket, saveUser);
         }catch (SQLException e){
@@ -63,14 +65,18 @@ public class TicketDAOImpl implements TicketDAO {
         preparedStatement.setInt(1, ticket.getTicketPrice());
         preparedStatement.setInt(2, ticket.getIdSessionTicket());
         preparedStatement.setInt(3, ticket.getIdUserTicket());
+        preparedStatement.setInt(4, ticket.getPlaceNumber());
+        preparedStatement.setInt(5, ticket.getPlaceRow());
+
         preparedStatement.executeUpdate();
     }
 
     @Override
     public void updateTicket(TicketEntity ticket) {
         int id = ticket.getId_ticket();
-        String updateTicket = "UPDATE user SET ticket_price=?, id_session_ticket=?, id_user_ticket=?"
-                + "WHERE id_ticket=" + id;
+        String updateTicket = "UPDATE ticket SET ticket_price=?, id_session_ticket=?, id_user_ticket=?,"
+                + " place_number=?, place_row=?"
+                + " WHERE id_ticket=" + id;
         try{
             setTicketInfo(ticket, updateTicket);
         }catch (SQLException e){
@@ -93,18 +99,21 @@ public class TicketDAOImpl implements TicketDAO {
         }
     }
 
-    @Override
-    public List<TicketEntity> findAll() {
+    public List<TicketEntity> findTicketBySessionId(int idSession){
         DbHandler dbHandler = DbHandler.getInstance();
         dbHandler.createConnection();
         Connection connection = DbHandler.getInstance().getConnection();
-        ResultSet resultSet = null;
+        String find = "SELECT * FROM ticket WHERE id_session_ticket=" + idSession;
         List<TicketEntity> tickets = new ArrayList<>();
-        String selectAllTickets = "SELECT * FROM ticket";
-        try{
-            PreparedStatement preparedStatement = connection.prepareStatement(selectAllTickets);
-            resultSet = preparedStatement.executeQuery(selectAllTickets);
+        tickets = setTicketList(connection, find, tickets);
+        return tickets;
+    }
 
+    private List<TicketEntity> setTicketList(Connection connection, String find, List<TicketEntity> tickets) {
+        ResultSet resultSet;
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(find);
+            resultSet = preparedStatement.executeQuery(find);
             while (resultSet.next()){
                 TicketEntity ticket = getTicketFromDB(resultSet);
                 tickets.add(ticket);
@@ -112,6 +121,17 @@ public class TicketDAOImpl implements TicketDAO {
         }catch (SQLException e){
             e.printStackTrace();
         }
+        return tickets;
+    }
+
+    @Override
+    public List<TicketEntity> findAll() {
+        DbHandler dbHandler = DbHandler.getInstance();
+        dbHandler.createConnection();
+        Connection connection = DbHandler.getInstance().getConnection();
+        List<TicketEntity> tickets = new ArrayList<>();
+        String selectAllTickets = "SELECT * FROM ticket";
+        tickets = setTicketList(connection, selectAllTickets, tickets);
         return tickets;
     }
 }

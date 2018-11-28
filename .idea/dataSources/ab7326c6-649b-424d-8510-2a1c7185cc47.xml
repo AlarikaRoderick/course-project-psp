@@ -1137,76 +1137,90 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="276" parent="239" name="id_session_ticket_idx">
+    <column id="276" parent="239" name="place_number">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="239" name="place_row">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="278" parent="239" name="id_session_ticket_idx">
       <ColNames>id_session_ticket</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="277" parent="239" name="id_user_ticket_idx">
+    <index id="279" parent="239" name="id_user_ticket_idx">
       <ColNames>id_user_ticket</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="278" parent="239" name="PRIMARY">
+    <key id="280" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_ticket</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="279" parent="239" name="id_session_ticket">
+    <foreign-key id="281" parent="239" name="id_session_ticket">
       <ColNames>id_session_ticket</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>session</RefTableName>
       <RefColNames>id_session</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="280" parent="239" name="id_user_ticket">
+    <foreign-key id="282" parent="239" name="id_user_ticket">
       <ColNames>id_user_ticket</ColNames>
       <RefSchemaName>cinema</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id_user</RefColNames>
     </foreign-key>
-    <column id="281" parent="240" name="id_user">
+    <column id="283" parent="240" name="id_user">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="240" name="user_name">
+    <column id="284" parent="240" name="user_name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="240" name="user_surname">
+    <column id="285" parent="240" name="user_surname">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="240" name="user_age">
+    <column id="286" parent="240" name="user_age">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="240" name="user_login">
+    <column id="287" parent="240" name="user_login">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="240" name="user_password">
+    <column id="288" parent="240" name="user_password">
       <Position>6</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="240" name="isAdmin">
+    <column id="289" parent="240" name="isAdmin">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="288" parent="240" name="PRIMARY">
+    <key id="290" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>

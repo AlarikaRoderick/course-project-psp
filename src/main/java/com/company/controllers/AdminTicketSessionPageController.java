@@ -54,6 +54,12 @@ public class AdminTicketSessionPageController {
     private TableColumn ticketPriceColumn;
 
     @FXML
+    private TableColumn placeRowColumn;
+
+    @FXML
+    private TableColumn placeNumberColumn;
+
+    @FXML
     private TableColumn idSessionColumn;
 
     @FXML
@@ -67,6 +73,12 @@ public class AdminTicketSessionPageController {
 
     @FXML
     private TextField idUserField;
+
+    @FXML
+    private TextField placeRowField;
+
+    @FXML
+    private TextField placeNumberField;
 
     @FXML
     private Button addTicketButton;
@@ -94,8 +106,15 @@ public class AdminTicketSessionPageController {
         sessionHourLabel.setText(String.valueOf(CurrentSessionEntity.getSession().getSessionTimeHour()));
         sessionMinuteLabel.setText(String.valueOf(CurrentSessionEntity.getSession().getSessionTimeMinute()));
 
+        setTicketTable();
+        initClick();
+    }
+
+    private void setTicketTable() {
         idColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("id_ticket"));
         ticketPriceColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("ticketPrice"));
+        placeRowColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("placeRow"));
+        placeNumberColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("placeNumber"));
         idSessionColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("idSessionTicket"));
         idUserColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("idUserTicket"));
         List<TicketEntity> tickets = ticketService.findAllTickets();
@@ -107,7 +126,6 @@ public class AdminTicketSessionPageController {
         }
         ObservableList<TicketEntity> ticketEntities = FXCollections.observableList(currentTickets);
         ticketTable.setItems(ticketEntities);
-        initClick();
     }
 
     private void initClick() {
@@ -117,10 +135,12 @@ public class AdminTicketSessionPageController {
                 if (event.getClickCount() == 1){
                     int id = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getId_ticket();
                     int price = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getTicketPrice();
-                    //int idSession = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getIdSessionTicket();
+                    int placeRow = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getPlaceRow();
+                    int placeNumber = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getPlaceNumber();
                     int idUser = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getIdUserTicket();
                     ticketPriceField.setText(String.valueOf(price));
-                    //idSessionField.setText(String.valueOf(idSession));
+                    placeRowField.setText(String.valueOf(placeRow));
+                    placeNumberField.setText(String.valueOf(placeNumber));
                     idUserField.setText(String.valueOf(idUser));
                 }
             }
@@ -133,11 +153,20 @@ public class AdminTicketSessionPageController {
             String request = adminTicketSessionService.addTicket(ticket);
             if (request.equals("successfulAdd")){
                 System.out.println("Билет добавлен");
+                clearFields();
                 initialize();
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private void clearFields() {
+        idUserField.clear();
+        idSessionField.clear();
+        ticketPriceField.clear();
+        placeRowField.clear();
+        placeNumberField.clear();
     }
 
     public void updateTicket(){
@@ -148,7 +177,8 @@ public class AdminTicketSessionPageController {
             String request = adminTicketSessionService.updateTicket(ticket);
             if (request.equals("successfulUpdate")){
                 System.out.println("Билет обновлен");
-                initialize();
+                clearFields();
+                setTicketTable();
             }
         }catch (IOException | ClassNotFoundException e){
             e.printStackTrace();
@@ -163,6 +193,7 @@ public class AdminTicketSessionPageController {
             String request = adminTicketSessionService.deleteTicket(ticket);
             if (request.equals("successfulDelete")){
                 System.out.println("Билет удален");
+                clearFields();
                 initialize();
             }
         }catch (IOException | ClassNotFoundException e){
@@ -172,7 +203,7 @@ public class AdminTicketSessionPageController {
 
     public void back(){
         try {
-            changeWindow.changeWindow(backButton, "/fxml/adminSessionPage.fxml");
+            changeWindow.changeWindow(backButton, "/fxml/adminFilmSessionPage.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -182,7 +213,9 @@ public class AdminTicketSessionPageController {
         int ticketPrice = Integer.valueOf(ticketPriceField.getText());
         int idSession = CurrentSessionEntity.getSession().getId_session();
         int idUser = Integer.valueOf(idUserField.getText());
-        TicketEntity ticket = new TicketEntity(ticketPrice, idSession, idUser);
+        int placeRow = Integer.valueOf(placeRowField.getText());
+        int placeNumber = Integer.valueOf(placeNumberField.getText());
+        TicketEntity ticket = new TicketEntity(ticketPrice, idSession, idUser, placeNumber, placeRow);
         return ticket;
     }
 }

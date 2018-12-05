@@ -46,22 +46,6 @@ public class AdminFirstPageController {
         }
     }
 
-    public void goToSessionPage(){
-        try{
-            changeWindow.changeWindow(sessionButton, "/fxml/adminSessionPage.fxml");
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    public void goToTicketPage(){
-        try{
-            changeWindow.changeWindow(ticketButton, "/fxml/adminTicketPage.fxml");
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
     public void goToUserPage(){
         try{
             changeWindow.changeWindow(userButton, "/fxml/adminUserPage.fxml");

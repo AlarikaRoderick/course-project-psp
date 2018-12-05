@@ -21,16 +21,6 @@
                 <Font name="Times New Roman" size="16.0" />
             </font>
         </Button>
-        <Button fx:id="sessionButton" layoutX="221.0" layoutY="164.0" mnemonicParsing="false" onAction="#goToSessionPage" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Сеансы">
-            <font>
-                <Font name="Times New Roman" size="16.0" />
-            </font>
-        </Button>
-      <Button fx:id="ticketButton" layoutX="221.0" layoutY="226.0" mnemonicParsing="false" onAction="#goToTicketPage" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Билеты">
-         <font>
-            <Font name="Times New Roman" size="16.0" />
-         </font>
-      </Button>
       <Button fx:id="userButton" layoutX="221.0" layoutY="288.0" mnemonicParsing="false" onAction="#goToUserPage" prefHeight="36.0" prefWidth="159.0" style="-fx-background-color: #b367ea#b367ea #b367ea#b367ea; -fx-border-radius: 10px;" text="Пользователи">
          <font>
             <Font name="Times New Roman" size="16.0" />

@@ -85,7 +85,7 @@
       <Button fx:id="addSessionButton" layoutX="370.0" layoutY="345.0" mnemonicParsing="false" onAction="#addSession" text="Добавить новый сеанс" />
       <Button fx:id="updateSessionButton" layoutX="402.0" layoutY="298.0" mnemonicParsing="false" onAction="#updateSession" text="Обновить" />
       <Button fx:id="deleteSessionButton" layoutX="552.0" layoutY="298.0" mnemonicParsing="false" onAction="#deleteSession" text="Удалить" />
-      <Button fx:id="backButton" layoutX="35.0" layoutY="339.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
+      <Button fx:id="backButton" onAction="#back" layoutX="35.0" layoutY="339.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Назад" />
       <Button fx:id="ticketSessionButton" onAction="#goToTicketPage" layoutX="560.0" layoutY="345.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="Билеты" />
    </children>
 </AnchorPane>

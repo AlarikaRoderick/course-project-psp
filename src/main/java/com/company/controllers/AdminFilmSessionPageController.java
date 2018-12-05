@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.JSONObject;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
@@ -95,14 +96,11 @@ public class AdminFilmSessionPageController {
     @FXML
     private Button backButton;
 
-    private SessionService sessionService = new SessionService();
-    private HallService hallService = new HallService();
     private AdminFilmSessionPageService filmSessionPageService = new AdminFilmSessionPageService();
-    private FilmService filmService = new FilmService();
     private ChangeWindow changeWindow = new ChangeWindow();
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException, ClassNotFoundException {
 
         filmNameLabel.setText(CurrentFilmEntity.getFilm().getFilmName());
         filmGenreLabel.setText(CurrentFilmEntity.getFilm().getFilmGenre());
@@ -113,7 +111,8 @@ public class AdminFilmSessionPageController {
         sessionHourColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("sessionTimeHour"));
         sessionMinuteColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("sessionTimeMinute"));
         hallNumberColumn.setCellValueFactory(new PropertyValueFactory<SessionEntity, Integer>("idHallSession"));
-        List<SessionEntity> sessions = sessionService.findAllSessions();
+        JSONObject object = filmSessionPageService.getSessions();
+        List<SessionEntity> sessions = (List<SessionEntity>) object.get("sessionList");
         List<SessionEntity> currentSessions = new ArrayList<>();
         for(SessionEntity session : sessions){
             if (session.getIdFilmSession() == CurrentFilmEntity.getFilm().getId_film()){
@@ -204,6 +203,14 @@ public class AdminFilmSessionPageController {
         SessionEntity session = new SessionEntity(sessionDate, CurrentFilmEntity.getFilm().getId_film(), hallNumber,
                 sessionHour, sessionMinute);
         return session;
+    }
+
+    public void back(){
+        try {
+            changeWindow.changeWindow(backButton, "/fxml/adminFilmPage.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

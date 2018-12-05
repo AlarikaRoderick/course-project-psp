@@ -24,6 +24,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.JSONObject;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
@@ -63,16 +64,10 @@ public class AdminTicketSessionPageController {
     private TableColumn idSessionColumn;
 
     @FXML
-    private TableColumn idUserColumn;
-
-    @FXML
     private TextField ticketPriceField;
 
     @FXML
     private TextField idSessionField;
-
-    @FXML
-    private TextField idUserField;
 
     @FXML
     private TextField placeRowField;
@@ -100,7 +95,7 @@ public class AdminTicketSessionPageController {
     private ChangeWindow changeWindow = new ChangeWindow();
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException, ClassNotFoundException {
         sessionDateLabel.setText(String.valueOf(CurrentSessionEntity.getSession().getSessionDate()));
         filmNameLabel.setText(CurrentFilmEntity.getFilm().getFilmName());
         sessionHourLabel.setText(String.valueOf(CurrentSessionEntity.getSession().getSessionTimeHour()));
@@ -110,14 +105,14 @@ public class AdminTicketSessionPageController {
         initClick();
     }
 
-    private void setTicketTable() {
+    private void setTicketTable() throws IOException, ClassNotFoundException {
         idColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("id_ticket"));
         ticketPriceColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("ticketPrice"));
         placeRowColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("placeRow"));
         placeNumberColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("placeNumber"));
         idSessionColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("idSessionTicket"));
-        idUserColumn.setCellValueFactory(new PropertyValueFactory<TicketEntity, Integer>("idUserTicket"));
-        List<TicketEntity> tickets = ticketService.findAllTickets();
+        JSONObject object = adminTicketSessionService.getTickets();
+        List<TicketEntity> tickets = (List<TicketEntity>) object.get("ticketList");
         List<TicketEntity> currentTickets = new ArrayList<>();
         for (TicketEntity ticket : tickets){
             if (ticket.getIdSessionTicket() == CurrentSessionEntity.getSession().getId_session()){
@@ -137,11 +132,9 @@ public class AdminTicketSessionPageController {
                     int price = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getTicketPrice();
                     int placeRow = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getPlaceRow();
                     int placeNumber = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getPlaceNumber();
-                    int idUser = ((TicketEntity)ticketTable.getSelectionModel().getSelectedItem()).getIdUserTicket();
                     ticketPriceField.setText(String.valueOf(price));
                     placeRowField.setText(String.valueOf(placeRow));
                     placeNumberField.setText(String.valueOf(placeNumber));
-                    idUserField.setText(String.valueOf(idUser));
                 }
             }
         });
@@ -162,8 +155,6 @@ public class AdminTicketSessionPageController {
     }
 
     private void clearFields() {
-        idUserField.clear();
-        idSessionField.clear();
         ticketPriceField.clear();
         placeRowField.clear();
         placeNumberField.clear();
@@ -212,10 +203,9 @@ public class AdminTicketSessionPageController {
     private TicketEntity createTicket() {
         int ticketPrice = Integer.valueOf(ticketPriceField.getText());
         int idSession = CurrentSessionEntity.getSession().getId_session();
-        int idUser = Integer.valueOf(idUserField.getText());
         int placeRow = Integer.valueOf(placeRowField.getText());
         int placeNumber = Integer.valueOf(placeNumberField.getText());
-        TicketEntity ticket = new TicketEntity(ticketPrice, idSession, idUser, placeNumber, placeRow);
+        TicketEntity ticket = new TicketEntity(ticketPrice, idSession, 0, placeNumber, placeRow);
         return ticket;
     }
 }

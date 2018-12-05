@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.JSONObject;
 
 public class AdminFilmPageController {
 
@@ -75,19 +76,18 @@ public class AdminFilmPageController {
     private Button addNewFilmButton;
 
     private AdminFilmPageService adminFilmPageService = new AdminFilmPageService();
-    private FilmService filmService = new FilmService();
     private FilmAdapter filmAdapter = new FilmAdapter();
     private ChangeWindow changeWindow = new ChangeWindow();
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException, ClassNotFoundException {
         idColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, Integer>("id_film"));
         filmNameColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmName"));
         filmGenreColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmGenre"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmTime"));
         ageRatingColumn.setCellValueFactory(new PropertyValueFactory<FilmEntity, String>("filmRating"));
-
-        List<FilmEntity> films = filmService.findAllFilms();
+        JSONObject filmList = adminFilmPageService.getFilms();
+        List<FilmEntity> films = (List<FilmEntity>) filmList.get("filmList");
         ObservableList<FilmEntity> filmEntities = filmAdapter.convertFromListToObservableList(films);
         filmTable.setItems(filmEntities);
         initClick();

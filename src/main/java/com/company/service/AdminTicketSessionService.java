@@ -6,6 +6,13 @@ import org.json.simple.JSONObject;
 import java.io.IOException;
 
 public class AdminTicketSessionService {
+    public JSONObject getTickets() throws IOException, ClassNotFoundException {
+        JSONObject object = new JSONObject();
+        object.put("action", "getTickets");
+        SendObjectService.sendObject(object);
+        return SendObjectService.getObject();
+    }
+
     public String addTicket(TicketEntity ticket) throws IOException, ClassNotFoundException {
         JSONObject object = new JSONObject();
         object.put("action", "addTicket");

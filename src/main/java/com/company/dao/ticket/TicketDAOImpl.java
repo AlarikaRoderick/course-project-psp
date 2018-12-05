@@ -3,10 +3,7 @@ package com.company.dao.ticket;
 import com.company.dbHandler.DbHandler;
 import com.company.entities.TicketEntity;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +61,7 @@ public class TicketDAOImpl implements TicketDAO {
         PreparedStatement preparedStatement = connection.prepareStatement(saveUser);
         preparedStatement.setInt(1, ticket.getTicketPrice());
         preparedStatement.setInt(2, ticket.getIdSessionTicket());
-        preparedStatement.setInt(3, ticket.getIdUserTicket());
+        preparedStatement.setNull(3, Types.INTEGER);
         preparedStatement.setInt(4, ticket.getPlaceNumber());
         preparedStatement.setInt(5, ticket.getPlaceRow());
 
@@ -107,6 +104,29 @@ public class TicketDAOImpl implements TicketDAO {
         List<TicketEntity> tickets = new ArrayList<>();
         tickets = setTicketList(connection, find, tickets);
         return tickets;
+    }
+
+    public List<TicketEntity> findFreeTickets(int idSession){
+        DbHandler dbHandler = DbHandler.getInstance();
+        dbHandler.createConnection();
+        Connection connection = DbHandler.getInstance().getConnection();
+        String find = "SELECT * FROM ticket WHERE id_session_ticket=" + idSession + " AND id_user_ticket IS NULL";
+        List<TicketEntity> tickets = new ArrayList<>();
+        tickets = setTicketList(connection, find, tickets);
+        return tickets;
+    }
+
+    public void setUserTicket(int idUser, int idTicket){
+        DbHandler dbHandler = DbHandler.getInstance();
+        dbHandler.createConnection();
+        Connection connection = DbHandler.getInstance().getConnection();
+        String setTicket = "UPDATE ticket SET id_user_ticket=" + idUser + " WHERE id_ticket=" + idTicket;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(setTicket);
+            preparedStatement.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     private List<TicketEntity> setTicketList(Connection connection, String find, List<TicketEntity> tickets) {

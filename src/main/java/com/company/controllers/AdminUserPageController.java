@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.JSONObject;
 
 public class AdminUserPageController {
 
@@ -81,21 +82,20 @@ public class AdminUserPageController {
     @FXML
     private TextField userPasswordField;
 
-    private UserService userService = new UserService();
     private UserAdapter userAdapter = new UserAdapter();
     private AdminUserPageService adminUserPageService = new AdminUserPageService();
     private ChangeWindow changeWindow = new ChangeWindow();
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException, ClassNotFoundException {
         idColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, Integer>("id_user"));
         userNameColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("userName"));
         userSurnameColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("userSurname"));
         userAgeColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, Integer>("userAge"));
         userLoginColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("userLogin"));
         userPasswordColumn.setCellValueFactory(new PropertyValueFactory<UserEntity, String>("userPassword"));
-
-        List<UserEntity> users = userService.findAllUsers();
+        JSONObject object = adminUserPageService.getUsers();
+        List<UserEntity> users = (List<UserEntity>) object.get("userList");
         ObservableList<UserEntity> userEntities = userAdapter.convertFromListToObservableList(users);
         userTable.setItems(userEntities);
         initClick();

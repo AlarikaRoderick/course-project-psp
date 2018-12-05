@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.json.simple.JSONObject;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,6 +25,7 @@ public class ServerWorker {
 
     public void runServerWorker() throws IOException, ClassNotFoundException {
         boolean repeat = true;
+        JSONObject object = new JSONObject();
         CinemaEntity cinema = new CinemaEntity();
         FilmEntity film = new FilmEntity();
         HallEntity hall = new HallEntity();
@@ -72,10 +74,26 @@ public class ServerWorker {
                     break;
                 case "getFilms":
                     List<FilmEntity> films = filmService.findAllFilms();
-                    //ObservableList<FilmEntity> filmEntityObservableList = filmAdapter.convertFromListToObservableList(films);
-                    ObservableList<FilmEntity> filmEntityObservableList = FXCollections.observableList(films);
-                    JSONObject object = new JSONObject();
-                    object.put("filmList", filmEntityObservableList);
+                    object = new JSONObject();
+                    object.put("filmList", films);
+                    this.sendObjectService.sendObject(object);
+                    break;
+                case "getSessions":
+                    List<SessionEntity> sessions = sessionService.findAllSessions();
+                    object = new JSONObject();
+                    object.put("sessionList", sessions);
+                    this.sendObjectService.sendObject(object);
+                    break;
+                case "getTickets":
+                    List<TicketEntity> tickets = ticketService.findAllTickets();
+                    object = new JSONObject();
+                    object.put("ticketList", tickets);
+                    this.sendObjectService.sendObject(object);
+                    break;
+                case "getUsers":
+                    List<UserEntity> users = userService.findAllUsers();
+                    object = new JSONObject();
+                    object.put("userList", users);
                     this.sendObjectService.sendObject(object);
                     break;
                 case "updateFilm":
@@ -143,6 +161,12 @@ public class ServerWorker {
                     ticketService.updateTicket(ticket);
                     System.out.println("Билет обновлен");
                     this.sendObjectService.sendMessage("successfulUpdate");
+                    break;
+                case "deleteTicket":
+                    ticket = (TicketEntity) message.get("ticket");
+                    ticketService.deleteTicket(ticket);
+                    System.out.println("Билет удален");
+                    this.sendObjectService.sendMessage("successfulDelete");
                     break;
                 case "editUser":
                     user = (UserEntity) message.get("user");

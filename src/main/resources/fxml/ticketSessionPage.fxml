@@ -51,7 +51,6 @@
             <TableColumn fx:id="placeRowColumn" prefWidth="57.0357666015625" text="Ряд" />
             <TableColumn fx:id="placeNumberColumn" minWidth="0.0" prefWidth="74.49114990234375" text="Место" />
                 <TableColumn fx:id="idSessionColumn" prefWidth="82.51788330078125" text="ID сеанса" />
-            <TableColumn fx:id="idUserColumn" prefWidth="74.48211669921875" text="ID пользователя" />
             </columns>
         </TableView>
         <Label layoutX="457.0" layoutY="150.0" text="Добавление нового билета">
@@ -70,10 +69,6 @@
             </font>
         </Label>
         <TextField fx:id="ticketPriceField" layoutX="556.0" layoutY="177.0" prefHeight="27.0" prefWidth="171.0" />
-        <TextField fx:id="idUserField" layoutX="556.0" layoutY="292.0" prefHeight="27.0" prefWidth="171.0" promptText="Введите 0 если билет свободен">
-         <font>
-            <Font size="10.0" />
-         </font></TextField>
         <Button fx:id="addTicketButton" layoutX="461.0" layoutY="353.0" mnemonicParsing="false" onAction="#addTicket" text="Добавить" />
         <Button fx:id="updateTicketButton" layoutX="563.0" layoutY="353.0" mnemonicParsing="false" onAction="#updateTicket" text="Обновить" />
         <Button fx:id="deleteTicketButton" layoutX="665.0" layoutY="353.0" mnemonicParsing="false" onAction="#deleteTicket" text="Удалить" />

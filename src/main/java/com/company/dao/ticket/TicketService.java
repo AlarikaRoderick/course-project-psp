@@ -32,4 +32,12 @@ public class TicketService {
     public List<TicketEntity> findTicketsBySessionId(int idSession){
         return new TicketDAOImpl().findTicketBySessionId(idSession);
     }
+
+    public void setUserTicket(int idUser, int idTicket){
+        new TicketDAOImpl().setUserTicket(idUser, idTicket);
+    }
+
+    public List<TicketEntity> findFreeTickets(int idSession){
+        return new TicketDAOImpl().findFreeTickets(idSession);
+    }
 }
